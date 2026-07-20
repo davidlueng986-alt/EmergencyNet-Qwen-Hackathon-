@@ -14,9 +14,9 @@ The test set is designed to prove five things independently:
 4. **Base intelligence:** decoding, patient aggregation, four anomaly detectors, SITREP, advisor, and tool calls use live state.
 5. **Human authority and failure safety:** malformed packets do not crash Base; the model cannot fabricate approval; offline mode stays functional.
 
-## 2. Test modes
+## 2. Test list
 
-| Mode | Hardware | API key | Proves |
+| Test | Hardware | API key | Proves |
 |---|---|---|---|
 | Unit | None | No | Pure rules, codec, gateway, mocked agent, approval gate |
 | Software E2E | One computer | Optional | Field hex → Base inject, dashboard, anomalies |
