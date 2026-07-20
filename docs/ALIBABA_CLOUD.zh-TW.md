@@ -2,7 +2,7 @@
 
 [English](ALIBABA_CLOUD.md) · [系統架構](ARCHITECTURE.zh-TW.md) · [Qwen 競賽官方頁](https://qwencloud-hackathon.devpost.com/)
 
-> **目前證據狀態：**所提供 Archive 內有 Alibaba Cloud Model Studio Client 與可部署的 Base Container，但沒有 ECS Instance ID、Region、Public URL 或 Runtime Evidence。在完成本指南並替換所有 Placeholder 前，不可聲稱 Backend 已在 Alibaba Cloud 運行。
+
 
 ## 1. Requirement 的實際意思
 
