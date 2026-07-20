@@ -22,7 +22,7 @@ The test set is designed to prove five things independently:
 | Software E2E | One computer | Optional | Field hex → Base inject, dashboard, anomalies |
 | Radio E2E | Android + 2–3 V4 nodes + Base | Optional | Real manual text relay over LoRa mesh |
 | Qwen live | Field/Base plus internet | Yes | Multilingual/vision review, strategy, tool loop |
-| Alibaba judge | Browser + deployed ECS | Yes on server | Public backend and Model Studio integration |
+
 
 Run deterministic/unit tests first; they are the backup if radio conditions or internet fail.
 
