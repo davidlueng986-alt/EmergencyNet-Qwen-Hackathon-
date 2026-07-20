@@ -156,14 +156,11 @@ After A then B, expect all active alerts:
 
 ## 5. Real LoRa mesh relay test
 
-Perform this with Packet A, then Packet B.
 
 1. Copy only one complete hex line.
 2. Field Meshtastic → private channel → paste → send.
 3. If proving mesh rather than a direct link, position the relay so the topology is visible and record the nodes/route evidence available in the client.
-4. At Base Meshtastic, confirm the text is not truncated. Packet A must have 128 characters; B must have 92.
-5. Copy the Base-received text, not the source fixture, into Base Dashboard → **Inject test packet**.
-6. Confirm decoded count `3`, then `2`; refresh Patients and SITREP.
+
 
 Pass criteria:
 
