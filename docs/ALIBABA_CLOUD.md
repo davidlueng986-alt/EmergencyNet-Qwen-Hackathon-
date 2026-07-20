@@ -13,7 +13,7 @@ The official competition overview currently says:
 
 For EmergencyNet, satisfy both—not only one:
 
-1. **Runtime:** deploy the Base dashboard/backend Docker container on an Alibaba Cloud ECS instance.
+1. **Runtime:** deploy the Base dashboard/backend Docker container on an Alibaba Cloud SAS instance.
 2. **Code:** link directly to `emergencynet/qwen_client.py`, which calls Alibaba Cloud Model Studio's DashScope OpenAI-compatible API; also point to `ai_config.py` for endpoint/model binding.
 
 A call from a local laptop to Qwen Cloud proves API use but does not by itself prove that the backend runs on Alibaba Cloud.
@@ -31,15 +31,15 @@ flowchart TB
     end
     subgraph AlibabaCloud["Alibaba Cloud"]
         Proxy["HTTPS reverse proxy and access control"]
-        ECS["ECS: Base Docker container"]
+        SAS["SAS: Base Docker container"]
         Qwen["Model Studio: Qwen API"]
-        Proxy --> ECS
-        ECS --> Qwen
+        Proxy --> SAS
+        SAS --> Qwen
     end
     Receiver -->|"Human pastes received hex"| Proxy
     Commander["Commander or judge browser"] --> Proxy
     Field -. "Optional Qwen review" .-> Qwen
-    ECS -->|"SITREP, anomalies, advisor, drafts"| Commander
+    SAS -->|"SITREP, anomalies, advisor, drafts"| Commander
 ```
 
 Data boundaries:
@@ -83,7 +83,7 @@ Model availability depends on the Model Studio deployment scope. The repository 
 
 ### Create the instance
 
-1. In the Alibaba Cloud ECS console, create a small Linux ECS instance in the region closest to judges and compatible with the chosen Model Studio service scope.
+1. In the Alibaba Cloud SAS console, create a small Linux ECS instance in the region closest to judges and compatible with the chosen Model Studio service scope.
 2. Assign a public IPv4 address or Elastic IP.
 3. Use a supported x86_64 Linux image with enough RAM for Gradio and Docker. The application does not load local LLM weights.
 4. Add an SSH key; do not use a weak password.
