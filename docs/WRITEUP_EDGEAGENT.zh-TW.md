@@ -15,7 +15,7 @@
 
 ## 一段 Description
 
-EmergencyNet 協助災難隊伍在 Internet 薄弱或中斷時保持檢傷與指揮協調。Android Field App 運行確定性 12 問與 Hidden-Risk Engine；可選 Qwen Cloud Review 可找出多語筆記或演練影像線索，但不擁有最終 Tag。Compact Record 轉成 Hex，經 Heltec V4 Meshtastic LoRa Mesh 人工接力。已 Dockerize 的 Base Dashboard 解碼 Packet、彙整 Patient State、偵測呼吸／燒傷／壓傷／RED Surge Pattern、建立 SITREP，並用 Qwen 提供 Structured Strategy 與受限 Function-Calling Agent。它已準備部署到 Alibaba Cloud ECS，但所提供 Archive 沒有 ECS Runtime Proof，提交前仍須完成真實部署。AI 可提出升級及草擬 Message，但人接受所有變更並核准每個 External Action。
+EmergencyNet 協助災難隊伍在 Internet 薄弱或中斷時保持檢傷與指揮協調。Android Field App 運行確定性 12 問與 Hidden-Risk Engine；可選 Qwen Cloud Review 可找出多語筆記或演練影像線索，但不擁有最終 Tag。Compact Record 轉成 Hex，經 Heltec V4 Meshtastic LoRa Mesh 人工接力。已 Dockerize 的 Base Dashboard 解碼 Packet、彙整 Patient State、偵測呼吸／燒傷／壓傷／RED Surge Pattern、建立 SITREP，並用 Qwen 提供 Structured Strategy 與受限 Function-Calling Agent。AI 可提出升級及草擬 Message，但人接受所有變更並核准每個 External Action。
 
 ## 功能
 
