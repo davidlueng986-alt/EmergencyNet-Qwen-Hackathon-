@@ -15,7 +15,10 @@
 
 ## One-paragraph description
 
-EmergencyNet helps disaster teams keep triage and command coordination functioning when normal internet service is weak or absent. An Android Field app runs a deterministic 12-question triage and hidden-risk engine, while optional Qwen Cloud review can surface clues in multilingual notes or staged images without owning the final tag. Compact records are converted to hex and manually relayed through a Meshtastic LoRa mesh built from Heltec V4 devices. The Dockerized Base dashboard decodes packets, aggregates patient state, detects respiratory/burn/crush/RED-surge patterns, builds SITREPs, and uses Qwen for structured strategy and a bounded function-calling agent. AI may propose escalation and draft messages, but people accept changes and approve every external action.
+* EmergencyNet helps disaster teams keep triage and command coordination functioning when normal internet service is weak or absent.
+*  An Android Field app runs a deterministic 12-question triage and hidden-risk engine, while optional Qwen Cloud review can surface clues in multilingual notes or staged images without owning the final tag.
+*   Compact records are converted to hex and manually relayed through a Meshtastic LoRa mesh built from Heltec V4 devices.
+*    The Dockerized Base dashboard decodes packets, aggregates patient state, detects respiratory/burn/crush/RED-surge patterns, builds SITREPs, and uses Qwen for structured strategy and a bounded function-calling agent. AI may propose escalation and draft messages, but human accept changes and approve every external action.
 
 ## What it does
 
