@@ -18,7 +18,7 @@ The test set is designed to prove five things independently:
 
 | Test | Hardware | API key | Proves |
 |---|---|---|---|
-| Unit | None | No | Pure rules, codec, gateway, mocked agent, approval gate |
+| Unit(Not included in demo) | None | No | Pure rules, codec, gateway, mocked agent, approval gate |
 | Software E2E | One computer | Optional | Field hex → Base inject, dashboard, anomalies |
 | Radio E2E | Android + 1-2 V4 nodes + Base | Optional | Real encoded text transfer over LoRa mesh |
 | Qwen live | Field/Base plus internet | Yes | Multilingual/vision review, strategy, tool loop |
