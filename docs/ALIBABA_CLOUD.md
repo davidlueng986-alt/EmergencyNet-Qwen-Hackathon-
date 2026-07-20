@@ -2,7 +2,7 @@
 
 [繁體中文](ALIBABA_CLOUD.zh-TW.md) · [Architecture](ARCHITECTURE.md) · [Official Qwen competition](https://qwencloud-hackathon.devpost.com/)
 
-> **Current evidence status:** the repository contains the Alibaba Cloud Model Studio client and a deployable Base container. No ECS instance ID, region, public URL, or runtime evidence was present in the supplied archive. Complete this guide and replace every placeholder before claiming that the backend is running on Alibaba Cloud.
+
 
 ## 1. What the requirement means
 
