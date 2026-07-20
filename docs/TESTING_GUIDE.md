@@ -8,7 +8,7 @@
 
 The test set is designed to prove five things independently:
 
-1. **Deterministic safety core:** tags and hidden risks work without AI or internet.
+1. **Deterministic safety core:** tags((START triage algorithm)) and hidden risks work without AI or internet.
 2. **Governed AI:** Qwen reviews multilingual/unstructured evidence but cannot de-escalate or silently apply it.
 3. **Constrained edge transport:** complete packets fit the manual Meshtastic text path and survive a real LoRa mesh relay.
 4. **Base intelligence:** decoding, patient aggregation, four anomaly detectors, SITREP, advisor, and tool calls use live state.
