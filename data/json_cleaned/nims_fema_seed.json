@@ -1,0 +1,104 @@
+{
+  "source": "NIMS_FEMA",
+  "collection": "command",
+  "chunks": [
+    {
+      "id": "NIMS-ICS-INCIDENT-COMMANDER",
+      "text": "The Incident Commander (IC) is the individual responsible for all incident activities, including the development of strategies and tactics and the ordering and release of resources. The IC has overall authority and responsibility for conducting incident operations and is responsible for the management of all incident operations at the incident site. The IC is the only position that is always staffed in ICS applications. In a Unified Command structure, multiple ICs from different jurisdictions or agencies share authority — the Unified Command makes decisions collaboratively while command of resources within each jurisdiction remains separate. EmergencyNet's base_dashboard supports this model: the SITREP and advisory output is consumable by any IC role, and the deterministic core operates without identifying specific authority. Reference: FEMA IS-100.c, Lesson 3 — Incident Command.",
+      "section": "Lesson 3 — Incident Command",
+      "page": 14,
+      "tags": ["incident_commander", "command", "ics_structure", "unified_command", "FEMA_IS100", "NIMS"]
+    },
+    {
+      "id": "NIMS-ICS-FUNCTIONAL-AREAS",
+      "text": "ICS organizes incident response into five functional areas: Command, Operations, Planning, Logistics, and Finance/Administration. Command directs the overall response. Operations conducts the tactical response (search-and-rescue, fire suppression, medical, evacuation). Planning collects, analyzes, and shares information; develops the Incident Action Plan (IAP). Logistics provides resources, supplies, communications, food, and medical support for responders. Finance/Administration tracks costs, time, procurement, and compensation. For small incidents, the Incident Commander may perform all five functions. As the incident grows, additional staff are added in span-of-control increments. EmergencyNet's RAG advisor maps queries to these functional areas — 'how should we resource this' is a Logistics query; 'how do we manage this 24-hour transition' is a Planning query. Reference: FEMA IS-100.c, Lesson 4 — Functional Areas.",
+      "section": "Lesson 4 — ICS Functional Areas",
+      "page": 18,
+      "tags": ["operations", "planning", "logistics", "finance", "command", "FEMA_IS100", "NIMS"]
+    },
+    {
+      "id": "NIMS-ICS-SPAN-OF-CONTROL",
+      "text": "Span of control is the supervisory authority of one supervisor over a number of subordinates. ICS recommends a span of control of 1:5 (one supervisor to five subordinates) for routine operations, with acceptable range 1:3 to 1:7. When span of control exceeds the upper bound, additional supervisory positions are added to maintain effectiveness. Excessive span of control degrades situation awareness, accountability, and command authority — leading to confusion and undirected operations. Conversely, span too narrow wastes leadership resources. For mass-casualty triage operations, this directly impacts how triage officers are assigned: at scenes with 50+ patients, multiple triage officers under a Triage Group Supervisor become necessary. EmergencyNet's anomaly_detector RED_SURGE alert at 5+ RED tags / 10 minutes is a useful trigger for command to assess whether triage span has been exceeded. Reference: FEMA IS-100.c, Lesson 4.",
+      "section": "Lesson 4 — Span of Control",
+      "page": 20,
+      "tags": ["span_of_control", "supervisory", "operations", "FEMA_IS100", "NIMS", "triage_supervisor"]
+    },
+    {
+      "id": "NIMS-ICS-COMMON-TERMINOLOGY",
+      "text": "ICS uses standardized common terminology to enable cross-agency, cross-jurisdiction interoperability. Specific elements: organizational functions standardized (Operations Section, Logistics Section, etc.); resource descriptions standardized (Type 1 helicopter, Type 2 strike team, Type 3 USAR); position titles standardized (Section Chief, Branch Director, Division/Group Supervisor, Strike Team Leader); facility designations standardized (Incident Command Post, Staging Area, Base, Camp, Helibase). The use of plain-English communications (no '10-codes' or agency-specific jargon) is mandatory in cross-agency operations. EmergencyNet's protocol_db.py registry supports this discipline: all citations and protocol references are spelled out in full (e.g. 'NIMS Resource Type 3' not internal acronyms). Common terminology directly addresses the JESIP UK lesson from Manchester 2017 — three radio networks couldn't speak to each other. Reference: FEMA IS-100.c, Lesson 1.",
+      "section": "Lesson 1 — Common Terminology",
+      "page": 8,
+      "tags": ["common_terminology", "interoperability", "plain_english", "JESIP", "FEMA_IS100", "NIMS"]
+    },
+    {
+      "id": "NIMS-ICS-IAP-CYCLE",
+      "text": "The Incident Action Plan (IAP) is the central planning artifact of ICS, developed in a recurring 'planning P' cycle: assess situation → set objectives → develop strategy → assemble resources → execute tactics → reassess. The IAP for an operational period (typically 12 or 24 hours) includes: ICS-202 incident objectives, ICS-203 organization assignment list, ICS-204 division assignment list, ICS-205 incident radio communications plan, ICS-206 medical plan, ICS-208 safety message, ICS-220 air operations summary. The IAP is typically distributed at the start of each operational period at the operational briefing. EmergencyNet's SITREP markdown is a downstream consumer of IAP information: SITREP describes what is happening, IAP describes what is planned for the next operational period. Reference: FEMA IS-200.c, Lesson 4 — Incident Action Planning.",
+      "section": "Incident Action Plan Cycle",
+      "page": 1,
+      "tags": ["IAP", "planning_P", "operational_period", "ICS_202", "FEMA_IS200", "NIMS", "planning"]
+    },
+    {
+      "id": "NIMS-ICS-RESOURCE-TYPING",
+      "text": "NIMS resource typing standardizes resource descriptions across jurisdictions to enable mutual aid. Resources are categorized by Kind (e.g., medical, search-and-rescue, fire), Type (capability tier, typically 1-4 with Type 1 most capable), and where applicable Component (e.g., Type 3 USAR has Heavy/Medium/Light components per INSARAG). Specific medical examples: Type 1 Disaster Medical Assistance Team (DMAT) — full multi-day deployment, Type 1 Burn Specialty Team, Type 2 Trauma Specialty Team, Type 3 Mental Health Crisis Counseling Program. Mutual aid request specifies the typed resource needed (e.g., 'request 2 Type 2 USAR teams') so the responding jurisdiction sends compatible-capability resources. EmergencyNet's RAG retrieves resource-typing context when SITREP indicates a class-3+ event escalation. Reference: FEMA IS-700.b, Lesson 4 — Resource Management.",
+      "section": "NIMS Resource Typing",
+      "page": 1,
+      "tags": ["resource_typing", "mutual_aid", "DMAT", "USAR", "FEMA_IS700", "NIMS", "logistics"]
+    },
+    {
+      "id": "NIMS-ICS-EOC-RELATIONSHIP",
+      "text": "Emergency Operations Centers (EOCs) operate at jurisdictional levels (local, county, regional, state, national), distinct from on-scene Incident Command Posts (ICP). The ICP manages tactical response at the incident; the EOC coordinates strategic decisions, resource allocation across multiple incidents, and policy interface. Information flow: SITREPs from ICP up to EOC; resource requests from ICP up to EOC; policy direction and resource allocation from EOC down to ICP. EOC activation has tiers (Level 3 monitoring, Level 2 partial activation, Level 1 full activation) tied to incident severity. Major-incident scenarios may have multiple ICPs (one per geographic incident) coordinating with single EOC. EmergencyNet's base_dashboard would in production deployment serve as the ICP-EOC bridge, consolidating SITREP content for upward reporting. Reference: FEMA IS-700.b, Lesson 5 — Communications and Information Management.",
+      "section": "EOC vs ICP",
+      "page": 1,
+      "tags": ["EOC", "ICP", "activation_tiers", "SITREP", "FEMA_IS700", "NIMS", "command"]
+    },
+    {
+      "id": "NIMS-ICS-PUBLIC-INFORMATION",
+      "text": "The Public Information Officer (PIO) is a Command Staff position reporting directly to the Incident Commander; in Unified Command, a Joint Information Center (JIC) coordinates messaging across agencies. Critical functions: media liaison, internal communications to responders' families, social-media monitoring (informal information often outpaces official sources, see Mexico City 2017 Verificado19s, Boston Marathon 2013), rumor control. During mass-casualty incidents, the PIO has heightened responsibility to manage public anxiety: published patient counts, hospital capacity status, missing-person registry coordination. Privacy considerations under HIPAA (US) or equivalent (GDPR EU, PIPL China, PDPA Singapore) constrain what individual patient information may be released. Family Reunification Centers (FRCs) are a related operational element — see CDC Blast Injury Primer for blast-incident application. EmergencyNet does not manage external messaging directly, but its SITREP can feed PIO content. Reference: FEMA IS-700.b + ICS-403.",
+      "section": "Public Information",
+      "page": 1,
+      "tags": ["PIO", "JIC", "media_liaison", "rumor_control", "HIPAA", "family_reunification", "FEMA_IS700", "NIMS"]
+    },
+    {
+      "id": "NIMS-ICS-SAFETY-OFFICER",
+      "text": "The Safety Officer (SOFR) is a Command Staff position with authority to halt unsafe operations independent of the chain of command — the only position with this authority. Role responsibilities: identify hazards in the operational environment, develop the ICS-208 Safety Message for each operational period, monitor responder fatigue and rotation, enforce PPE discipline, coordinate with technical specialists (CBRN, structural, hazmat, medical) for hazard assessment. In hazmat incidents, the Safety Officer typically delegates technical hazard assessment to a Hazmat Branch Safety Officer with chemistry-specific expertise. Critical incident stress recognition is part of safety scope — fatigued or psychologically overwhelmed responders are themselves a hazard. EmergencyNet's geo_fence ZONE-typed PPE advice is downstream of Safety Officer judgment — the system suggests PPE level based on zone classification, but the Safety Officer authorizes operations. Reference: FEMA IS-200.c, Lesson 3 — Command Staff.",
+      "section": "Safety Officer",
+      "page": 1,
+      "tags": ["safety_officer", "SOFR", "PPE_authorization", "hazard_assessment", "responder_fatigue", "FEMA_IS200", "NIMS"]
+    },
+    {
+      "id": "NIMS-ICS-LIAISON-OFFICER",
+      "text": "The Liaison Officer (LOFR) is a Command Staff position serving as the primary point of contact for representatives of supporting agencies (cooperating, supporting, and assisting agencies that are not under the Incident Commander's direct command). Role: coordinate with agency representatives so the Incident Commander has a single point of contact for inter-agency interface; facilitate information flow between IC and external agencies; manage assistance requests from outside the incident. Distinguishes from operational coordination (which is direct between sections) and EOC coordination (which is via established reporting channels). Important in multi-jurisdictional incidents, mass-casualty events involving multiple hospitals, and cross-border / international incidents. EmergencyNet relevance: LOFR could use base_dashboard's SITREP feed for cross-agency briefings; the comparator's field-vs-shadow disagreement reporting is useful for cross-agency QA. Reference: FEMA IS-200.c, Lesson 3.",
+      "section": "Liaison Officer",
+      "page": 1,
+      "tags": ["liaison_officer", "LOFR", "multi_agency", "cross_jurisdiction", "FEMA_IS200", "NIMS", "command"]
+    },
+    {
+      "id": "NIMS-ICS-OPERATIONS-CHIEF",
+      "text": "The Operations Section Chief is responsible for the management of all operations directly applicable to the primary mission. Reports to the Incident Commander. Manages the Operations Section — typically organized by Branch (geographic or functional), Division (geographic), or Group (functional). For mass-casualty medical operations, common organization includes: Triage Group, Treatment Group, Transport Group, Morgue Group; with field hospital or Casualty Collection Point (CCP) sub-elements. Strike Teams (5 of same kind/type with leader) and Task Forces (mixed kinds, single leader) are tactical resource bundles. Span-of-control (1:5 typical, 1:7 max) drives Branch/Division/Group structure as incident grows. EmergencyNet base_dashboard serves Operations: tag distribution, evacuation order, anomaly alerts feed Operations decision-making. Reference: FEMA IS-200.c, Lesson 5 — General Staff.",
+      "section": "Operations Section Chief",
+      "page": 1,
+      "tags": ["operations_chief", "branch", "division", "group", "strike_team", "task_force", "FEMA_IS200", "NIMS"]
+    },
+    {
+      "id": "NIMS-ICS-PLANNING-CHIEF",
+      "text": "The Planning Section Chief is responsible for collecting, evaluating, disseminating, and using information about the development of the incident and the status of resources. Reports to the Incident Commander. Planning Section sub-units: Resources Unit (tracks resource status), Situation Unit (collects incident information, prepares Situation Reports), Documentation Unit (maintains incident files), Demobilization Unit (plans orderly resource release), and Technical Specialists (subject-matter experts attached as needed: structural engineer, hazmat chemist, physician, weather forecaster). The Situation Unit produces the SITREP (typically every 12 hours or operational-period boundary) that feeds the IAP cycle. EmergencyNet's base_dashboard SITREP markdown directly supports the Situation Unit function — automated triage, zone, and anomaly summary that would otherwise require manual aggregation from paper triage tags. Reference: FEMA IS-200.c, Lesson 5.",
+      "section": "Planning Section Chief",
+      "page": 1,
+      "tags": ["planning_chief", "situation_unit", "documentation", "demobilization", "technical_specialist", "SITREP", "FEMA_IS200"]
+    },
+    {
+      "id": "NIMS-ICS-LOGISTICS-CHIEF",
+      "text": "The Logistics Section Chief is responsible for providing facilities, services, and material support for the incident. Reports to the Incident Commander. Logistics Section sub-units: Service Branch (Communications Unit, Medical Unit for responder health, Food Unit), Support Branch (Supply Unit, Facilities Unit, Ground Support Unit). The Communications Unit operates the radio communications plan (ICS-205) and is the entity responsible for interoperability across responding agencies — directly relevant to JESIP UK doctrine and EmergencyNet's Meshtastic-mesh design. Medical Unit is for responder care (a hazmat decon-line for responders, fatigue management, occupational health) — distinct from patient care which is in Operations. Common stress points in mass-casualty operations: PPE supply (depleted within 2-6 hours of major hazmat event), water/food/sanitation for extended operations, fuel for vehicles. EmergencyNet's anomaly_detector signals Logistics needs (e.g., RED_SURGE → request 4 BLS units in mesh broadcast). Reference: FEMA IS-200.c, Lesson 5.",
+      "section": "Logistics Section Chief",
+      "page": 1,
+      "tags": ["logistics_chief", "communications_unit", "medical_unit", "supply_unit", "JESIP", "FEMA_IS200", "NIMS"]
+    },
+    {
+      "id": "NIMS-ICS-DEMOBILIZATION",
+      "text": "Demobilization is the orderly release of resources from incident assignment back to their home jurisdiction. The Demobilization Unit (Planning Section) develops the Demobilization Plan in coordination with the IC and ordering authority. Steps: identify resources eligible for release (mission complete, exhausted, replaced); coordinate with home jurisdiction for receipt and refit; conduct after-action review (AAR); document lessons learned for the After Action Report. Critical safety dimension: fatigued responders are at elevated risk during demobilization travel — multiple post-incident driving fatalities are documented in EMS literature. Demobilization in mass-casualty context also includes psychological support — survivors of long deployments to traumatic scenes have measurably elevated PTSD risk; mental-health screening at demobilization is standard for major incidents (post-9/11 World Trade Center responder cohort). EmergencyNet relevance: long-deployment patient roster persistence in chroma_db supports AAR documentation. Reference: FEMA IS-200.c, Lesson 6 — Transferring Command + IS-700.b.",
+      "section": "Demobilization",
+      "page": 1,
+      "tags": ["demobilization", "AAR", "PTSD", "responder_fatigue", "lessons_learned", "FEMA_IS200", "FEMA_IS700"]
+    }
+  ]
+}

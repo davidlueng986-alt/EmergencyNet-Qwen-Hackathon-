@@ -1,0 +1,6 @@
+# Desktop/Base and Docker runtime.
+# The Android field device should use requirements-field.txt instead.
+-r requirements-field.txt
+folium>=0.17,<1
+meshtastic>=2.5,<3
+pyserial>=3.5,<4

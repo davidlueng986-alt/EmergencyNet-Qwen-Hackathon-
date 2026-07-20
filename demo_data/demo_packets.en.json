@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "language": "en",
+  "safety": "Synthetic exercise data only. Not for clinical use.",
+  "transport_note": "Each valid packet is an independent complete packet and fits one Meshtastic text message. Copy only the hex value.",
+  "fixed_timestamp_utc": "2026-07-19T12:00:00Z",
+  "team_id": 7,
+  "zone_code": 4,
+  "packets": {
+    "diversity": {
+      "purpose": "Show all four deterministic triage tags in one safe-size packet.",
+      "binary_bytes": 82,
+      "hex_characters": 164,
+      "expected_patient_ids": [101, 102, 103, 104],
+      "expected_tags": ["GREEN", "YELLOW", "RED", "BLACK"],
+      "hex": "01070040bc5c6a0404cc6537b79f0730d1fe000000801b020000ff046641b79f0c30d1fd000000002c020000ffce674ab79f1130d1fc000010001f010800fff06853b79f1530d1eb200145083440d008ff33"
+    },
+    "anomaly_a": {
+      "purpose": "First half of the cluster demo: three RED patients with respiratory distress, burns, and entrapment.",
+      "binary_bytes": 64,
+      "hex_characters": 128,
+      "expected_patient_ids": [201, 202, 203],
+      "expected_tags": ["RED", "RED", "RED"],
+      "expected_new_anomalies_after_clean_start": ["BURN_CLUSTER", "CRUSH_CLUSTER"],
+      "hex": "01070040bc5c6a0304cbc98bb79f3130d1fc40401011220c08002d4cca95b79f3630d1fc404010111d0c08002d69cb9eb79f3b30d1fc40401011290c08002d5a"
+    },
+    "anomaly_b": {
+      "purpose": "Second half of the cluster demo: two more respiratory RED patients; ingest after anomaly_a.",
+      "binary_bytes": 46,
+      "hex_characters": 92,
+      "expected_patient_ids": [204, 205],
+      "expected_tags": ["RED", "RED"],
+      "expected_active_anomalies_after_a_then_b": ["RESP_CLUSTER", "BURN_CLUSTER", "CRUSH_CLUSTER", "RED_SURGE"],
+      "hex": "01070040bc5c6a0204cacce8b79f6030d1fc000010001a010800ff8dcdf2b79f6530d1fc0000100038010800ffb1"
+    },
+    "malformed_b": {
+      "purpose": "Negative test: the final patient checksum byte is changed from b1 to b0.",
+      "expected_alert": "MALFORMED_PACKET",
+      "hex": "01070040bc5c6a0204cacce8b79f6030d1fc000010001a010800ff8dcdf2b79f6530d1fc0000100038010800ffb0"
+    }
+  }
+}

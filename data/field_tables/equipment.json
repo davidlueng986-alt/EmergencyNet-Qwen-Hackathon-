@@ -1,0 +1,180 @@
+{
+  "_meta": {
+    "version": "0.1",
+    "filename": "equipment.json",
+    "purpose": "Equipment whitelist keyed by visible injury and hidden risk code. Field AI's equipment_needs output MUST be a subset of items appearing in entries matching the patient. Set-membership check enforced by post-LLM safety filter.",
+    "content_provenance": "AI-generated. Quantities are order-of-magnitude estimates aligned with WHO Emergency Medical Team Type 1 minimum equipment list and TCCC equipment recommendations. NOT a clinically validated procurement table. Real deployment must replace with locally-validated logistics data.",
+    "ref_categories_used": [
+      "WHO Emergency Medical Team (EMT) Type 1 minimum equipment list (public)",
+      "TCCC Equipment Recommendations (Tactical Combat Casualty Care, public)",
+      "PHTLS 10th ed Equipment Chapter (NAEMT)",
+      "ABLS Provider Manual (American Burn Association)",
+      "WHO Trauma Care Checklist + Kit Lists"
+    ],
+    "rationale_note": "Each item has 'rationale' tied to a specific clinical indication. The Field AI may copy the rationale or rephrase it bound to the specific patient finding."
+  },
+
+  "entries": {
+
+    "Q5_crush_syndrome": [
+      {"item": "Large-bore IV catheter 14-16G", "qty": 2, "rationale": "Crush requires aggressive pre-extrication resuscitation via two routes"},
+      {"item": "Normal saline 1L", "qty": 3, "rationale": "Pre-release 1L bolus, ongoing maintenance, post-release continuing"},
+      {"item": "Cardiac monitor / AED", "qty": 1, "rationale": "Hyperkalemia arrhythmia watch immediately post-release"},
+      {"item": "Calcium gluconate 10% 10ml", "qty": 1, "rationale": "Empiric treatment if ECG shows peaked T waves or widened QRS"},
+      {"item": "Sodium bicarbonate 8.4% 50ml", "qty": 1, "rationale": "If suspected severe acidosis post-release (use with caution)"},
+      {"item": "Urinary catheter", "qty": 1, "rationale": "Monitor urine output (target >100ml/h to prevent rhabdomyolysis renal failure)"}
+    ],
+
+    "Q6_occult_internal_bleed": [
+      {"item": "Large-bore IV catheter 14-16G", "qty": 2, "rationale": "Two routes for permissive resuscitation"},
+      {"item": "Normal saline 1L", "qty": 1, "rationale": "Initial volume — avoid over-resuscitation"},
+      {"item": "TXA 1g IV", "qty": 1, "rationale": "Antifibrinolytic within 3h window per CRASH-2"},
+      {"item": "Pelvic binder / sheet wrap", "qty": 1, "rationale": "If pelvic source suspected — stabilize prior to transport"},
+      {"item": "Cardiac monitor / AED", "qty": 1, "rationale": "Continuous vital monitoring during transport"}
+    ],
+
+    "Q7_pregnancy_complication": [
+      {"item": "Large-bore IV catheter 16-18G", "qty": 1, "rationale": "Volume access if hemorrhage; smaller bore acceptable for stable patients"},
+      {"item": "Normal saline 1L", "qty": 1, "rationale": "Volume support, replace based on bleeding"},
+      {"item": "OB delivery kit (sterile)", "qty": 1, "rationale": "Standby for precipitous delivery in transport"},
+      {"item": "Sanitary pads (count and save)", "qty": 4, "rationale": "Quantify bleeding for hospital handover"},
+      {"item": "Magnesium sulfate 4g IV pre-mix", "qty": 1, "rationale": "Eclampsia treatment per ALSO protocol (paramedic only)"}
+    ],
+
+    "Q8_altered_mental_status": [
+      {"item": "Glucometer + test strips", "qty": 1, "rationale": "Exclude hypoglycemia before assuming neurological cause"},
+      {"item": "Dextrose 50% 25g IV", "qty": 1, "rationale": "Treat hypoglycemia if confirmed"},
+      {"item": "Non-rebreather O2 mask", "qty": 1, "rationale": "Maintain SpO2 ≥94%"},
+      {"item": "Naloxone 0.4mg IV/IN", "qty": 2, "rationale": "Only if clear opioid mechanism in context"},
+      {"item": "OPA / NPA airway adjuncts (assorted)", "qty": 1, "rationale": "Airway protection for diminished GCS"}
+    ],
+
+    "Q9_airway_burn": [
+      {"item": "Non-rebreather O2 mask", "qty": 1, "rationale": "High-flow O2 prior to potential edema progression"},
+      {"item": "Endotracheal tube assortment (7.0-8.0)", "qty": 3, "rationale": "Standby if intubation by trained personnel becomes necessary"},
+      {"item": "Bougie / introducer", "qty": 1, "rationale": "Difficult airway adjunct given expected edema"},
+      {"item": "Surgical cricothyroidotomy kit", "qty": 1, "rationale": "Last-resort airway if upper airway swelling prevents intubation"},
+      {"item": "Suction unit with rigid + flex tips", "qty": 1, "rationale": "Soot, secretions, oropharyngeal blood"}
+    ],
+
+    "Q10_neurogenic_shock": [
+      {"item": "Cervical collar (adjustable)", "qty": 1, "rationale": "Spinal precaution — keep on throughout transport"},
+      {"item": "Large-bore IV catheter 14-16G", "qty": 1, "rationale": "Cautious volume access"},
+      {"item": "Normal saline 500ml", "qty": 1, "rationale": "Small volume challenge, not aggressive resuscitation"},
+      {"item": "Cardiac monitor / AED", "qty": 1, "rationale": "Monitor for bradycardia / hemodynamic deterioration"}
+    ],
+
+    "Q11_geriatric_anticoag_head": [
+      {"item": "Cardiac monitor / AED", "qty": 1, "rationale": "Continuous vital monitoring for deterioration"},
+      {"item": "Cervical collar (adjustable)", "qty": 1, "rationale": "C-spine precaution given mechanism"},
+      {"item": "Non-rebreather O2 mask", "qty": 1, "rationale": "Maintain SpO2 ≥94% to avoid secondary brain injury"},
+      {"item": "Medication list documentation form", "qty": 1, "rationale": "Verbatim record of anticoagulant + last dose time critical for hospital reversal decision"}
+    ],
+
+    "Q12_blast_lung": [
+      {"item": "Non-rebreather O2 mask", "qty": 1, "rationale": "High-flow O2 for pulmonary contusion"},
+      {"item": "Needle thoracostomy kit (14G x 8cm)", "qty": 2, "rationale": "Standby for tension pneumothorax decompression (trained only)"},
+      {"item": "Pulse oximeter", "qty": 1, "rationale": "Continuous SpO2 monitoring"},
+      {"item": "Cardiac monitor / AED", "qty": 1, "rationale": "Hemodynamic deterioration watch"}
+    ],
+
+    "major_hemorrhage": [
+      {"item": "CAT tourniquet", "qty": 2, "rationale": "Primary + backup for extremity arterial bleeding"},
+      {"item": "Hemostatic gauze (Combat Gauze or equivalent)", "qty": 2, "rationale": "Junctional bleeding or wound packing"},
+      {"item": "Pressure bandage (Israeli or equivalent)", "qty": 2, "rationale": "Post-TQ secondary pressure + non-extremity sites"},
+      {"item": "TXA 1g IV", "qty": 1, "rationale": "Antifibrinolytic within 3h of injury per CRASH-2"},
+      {"item": "Large-bore IV catheter 14-16G", "qty": 2, "rationale": "Volume access"},
+      {"item": "Normal saline 1L", "qty": 2, "rationale": "Permissive resuscitation"}
+    ],
+
+    "burn_major": [
+      {"item": "Sterile burn sheet", "qty": 2, "rationale": "Cover burned area, prevent contamination"},
+      {"item": "Normal saline 1L", "qty": 3, "rationale": "Parkland formula resuscitation — adjust per kg + %TBSA"},
+      {"item": "Large-bore IV catheter 16-18G", "qty": 2, "rationale": "Place through unburned skin preferentially"},
+      {"item": "Morphine 10mg IV", "qty": 1, "rationale": "Pain control (titrate to effect)"},
+      {"item": "Foley catheter", "qty": 1, "rationale": "Monitor urine output during fluid resuscitation"},
+      {"item": "Non-rebreather O2 mask", "qty": 1, "rationale": "Standard for major burns even without airway involvement"},
+      {"item": "Aluminum thermal blanket", "qty": 1, "rationale": "Prevent hypothermia (burns lose thermoregulation)"}
+    ],
+
+    "burn_minor": [
+      {"item": "Clean dry dressing pad", "qty": 2, "rationale": "Cover after irrigation"},
+      {"item": "Cling wrap / clear plastic film", "qty": 1, "rationale": "Non-adherent burn cover for first 24h (per local protocol)"},
+      {"item": "Oral analgesic (paracetamol or ibuprofen)", "qty": 4, "rationale": "Pain control for ambulatory patient"}
+    ],
+
+    "open_fracture": [
+      {"item": "Saline-soaked sterile gauze", "qty": 2, "rationale": "Cover exposed bone end / wound"},
+      {"item": "Splint (rigid or vacuum, appropriate size)", "qty": 1, "rationale": "Immobilize joint above + below fracture"},
+      {"item": "Cefazolin 2g IV (or local equivalent)", "qty": 1, "rationale": "Early antibiotic per Gustilo-Anderson recommendations"},
+      {"item": "Pressure bandage", "qty": 1, "rationale": "Hemorrhage control without TQ if possible"}
+    ],
+
+    "closed_fracture": [
+      {"item": "Splint (rigid or vacuum, appropriate size)", "qty": 1, "rationale": "Immobilize joint above + below"},
+      {"item": "Triangular bandage / sling", "qty": 1, "rationale": "Upper extremity support"},
+      {"item": "Cold pack (instant)", "qty": 1, "rationale": "Edema control if not contraindicated"}
+    ],
+
+    "amputation": [
+      {"item": "CAT tourniquet", "qty": 1, "rationale": "Stump hemorrhage control"},
+      {"item": "Sterile saline-moist gauze", "qty": 2, "rationale": "Wrap amputated part"},
+      {"item": "Sealed plastic bag (specimen)", "qty": 1, "rationale": "Contain wrapped amputated part"},
+      {"item": "Ice + insulating barrier", "qty": 1, "rationale": "Cool sealed bag — DO NOT direct ice on tissue"},
+      {"item": "TXA 1g IV", "qty": 1, "rationale": "Antifibrinolytic"}
+    ],
+
+    "chest_trauma": [
+      {"item": "Three-sided occlusive dressing (chest seal)", "qty": 2, "rationale": "Open chest wound — vented to prevent tension pneumothorax"},
+      {"item": "Needle thoracostomy kit (14G x 8cm)", "qty": 2, "rationale": "Tension pneumothorax decompression (trained only)"},
+      {"item": "Non-rebreather O2 mask", "qty": 1, "rationale": "Maintain SpO2"},
+      {"item": "Pulse oximeter", "qty": 1, "rationale": "Continuous monitoring"}
+    ],
+
+    "head_trauma": [
+      {"item": "Cervical collar (adjustable)", "qty": 1, "rationale": "C-spine precaution"},
+      {"item": "Non-rebreather O2 mask", "qty": 1, "rationale": "Avoid secondary hypoxic injury"},
+      {"item": "Pulse oximeter", "qty": 1, "rationale": "Maintain SpO2 ≥94%"},
+      {"item": "Pen torch / pupil light", "qty": 1, "rationale": "Serial pupil checks"}
+    ],
+
+    "spinal_suspected": [
+      {"item": "Cervical collar (adjustable)", "qty": 1, "rationale": "Primary spinal precaution"},
+      {"item": "Long spine board / scoop stretcher", "qty": 1, "rationale": "Extrication / movement"},
+      {"item": "Head blocks + straps", "qty": 1, "rationale": "Secondary head immobilization on board"}
+    ],
+
+    "pediatric_under_8": [
+      {"item": "Broselow length-based dosing tape", "qty": 1, "rationale": "Weight-based drug dosing without scale"},
+      {"item": "Pediatric BVM (infant/child)", "qty": 1, "rationale": "Size-appropriate ventilation"},
+      {"item": "Pediatric IO needle (15G)", "qty": 1, "rationale": "Backup if IV fails after 2 attempts / 90 sec"},
+      {"item": "Pediatric airway adjuncts (OPA sizes 00-2)", "qty": 1, "rationale": "Size-appropriate"},
+      {"item": "Aluminum thermal blanket (small)", "qty": 1, "rationale": "Higher hypothermia risk in pediatrics"}
+    ],
+
+    "RED_general": [
+      {"item": "Large-bore IV catheter 14-16G", "qty": 2, "rationale": "Volume access for resuscitation"},
+      {"item": "Cardiac monitor / AED", "qty": 1, "rationale": "Continuous monitoring"},
+      {"item": "Pulse oximeter", "qty": 1, "rationale": "SpO2 trend"},
+      {"item": "Non-rebreather O2 mask", "qty": 1, "rationale": "Maintain saturation"}
+    ],
+
+    "YELLOW_general": [
+      {"item": "IV catheter 18-20G", "qty": 1, "rationale": "Access for medication / volume if needed"},
+      {"item": "Pulse oximeter", "qty": 1, "rationale": "Periodic check"},
+      {"item": "Triage tag (YELLOW)", "qty": 1, "rationale": "Identification and tracking"}
+    ],
+
+    "GREEN_general": [
+      {"item": "Triage tag (GREEN)", "qty": 1, "rationale": "Identification and tracking"},
+      {"item": "Adhesive bandage / basic dressing", "qty": 2, "rationale": "Minor wound coverage"},
+      {"item": "Oral analgesic (paracetamol)", "qty": 2, "rationale": "Pain control if needed"}
+    ],
+
+    "BLACK_general": [
+      {"item": "Triage tag (BLACK)", "qty": 1, "rationale": "Identification at scene"},
+      {"item": "Body cover / sheet", "qty": 1, "rationale": "Dignity"}
+    ]
+
+  }
+}

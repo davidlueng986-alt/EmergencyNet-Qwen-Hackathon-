@@ -1,0 +1,83 @@
+{
+  "source": "WHO_MCM",
+  "collection": "command",
+  "chunks": [
+    {
+      "id": "WHO-MCM-DEFINITION-MCI",
+      "text": "WHO defines a Mass Casualty Incident (MCI) as 'an event that overwhelms the local health system, with a number of casualties vastly exceeding local resources and capabilities.' The defining feature is overwhelm — not absolute casualty count. A 10-patient incident in a remote hospital with one physician is an MCI; the same incident at a major trauma center is routine. WHO MCM Field Manual emphasizes: (1) declare MCI early — overestimating activates surge while underestimating fails patients; (2) MCI declaration triggers cross-organizational protocols (mutual aid request, hospital divert authority, supply pre-positioning); (3) MCI status persists until casualty load returns within local capacity, regardless of original incident extent. EmergencyNet's anomaly_detector RED_SURGE alert at 5+ RED tags / 10 minutes is calibrated to the WHO 'overwhelm' threshold for typical district-level capacity; thresholds are configurable per deployment region. Reference: WHO Mass Casualty Management Field Manual, Section 1 — Definition.",
+      "section": "MCI Definition",
+      "page": 1,
+      "tags": ["MCI_definition", "overwhelm", "surge_threshold", "WHO_MCM", "anomaly_detector", "command"]
+    },
+    {
+      "id": "WHO-MCM-START-TRIAGE",
+      "text": "The Simple Triage and Rapid Treatment (START) algorithm is the WHO-recommended adult mass-casualty triage method. Operates on three vital signs (Respirations, Perfusion, Mental status — RPM) plus walking ability. Decision tree: ambulatory → GREEN; non-ambulatory + apneic → reposition airway, if still apneic → BLACK, if breathing → RED; respirations >30/min → RED; perfusion (radial pulse absent or capillary refill >2 sec) → RED; mental status (cannot follow simple commands) → RED; otherwise → YELLOW. Time per patient: <30 seconds; standard for first-pass at scene. JumpSTART pediatric variant uses age-appropriate respiratory rates (15-45/min normal in children) and includes 5 rescue breaths before declaring black tag. EmergencyNet's deterministic core implements START + JumpSTART with pediatric override at age <8 years. The 12-question screening adds 7 hidden-risk questions (Q5 crush, Q6 abdominal, Q7 pregnancy, Q8 mental, Q9 airway burn, Q10 mechanism, Q11 elderly head, Q12 close blast) that escalate beyond START's RPM-only criteria. Reference: WHO MCM Field Manual + START original 1983 protocol + JumpSTART Romig 2002.",
+      "section": "START / RPM Triage",
+      "page": 1,
+      "tags": ["START", "JumpSTART", "RPM", "triage_algorithm", "WHO_MCM", "deterministic_core", "command"]
+    },
+    {
+      "id": "WHO-MCM-SECONDARY-TRIAGE",
+      "text": "Secondary triage occurs after initial START sorting and before transport — typically at a Casualty Collection Point (CCP) or treatment area. Used to refine triage tag based on more detailed assessment than the 30-second START scan permits. Common methods: SAVE (Secondary Assessment of Victim Endpoint, US military origin), SALT (Sort-Assess-Lifesaving-Treatment-Transport), or expanded RPM with additional clinical findings. Secondary triage may upgrade GREEN to YELLOW (occult internal injury identified), maintain YELLOW or RED, or in resource-constrained scenarios mark RED as expectant when surgical capacity is exhausted. Conscientious management of the BLACK / expectant category requires senior clinician judgment, ideally two-person concurrence — a documented practice from Taiwan 921 USAR doctrine codified post-1999. EmergencyNet's hidden-risk overrides function as an automated secondary-triage layer — Q1 (active bleeding), Q2 (hidden risk override) escalate within minutes without manual reassessment. Reference: WHO MCM Field Manual + Taiwan NFA USAR doctrine.",
+      "section": "Secondary Triage",
+      "page": 1,
+      "tags": ["secondary_triage", "SAVE", "SALT", "expectant_BLACK", "WHO_MCM", "Taiwan_USAR", "command"]
+    },
+    {
+      "id": "WHO-MCM-CASUALTY-FLOW",
+      "text": "Casualty flow at MCI scene proceeds through: (1) point of injury (POI) — rapid extraction by first responders; (2) primary triage point — 30-second START sort by triage officer; (3) Casualty Collection Point (CCP) — secondary triage and stabilization (airway, hemorrhage control, IV access, splinting); (4) loading zone — ambulance hand-off; (5) receiving hospital — definitive care. Each transition requires accountable hand-off documentation: triage tag (paper or electronic), patient log, vital signs trend. Bottlenecks are at primary triage (limited by triage-officer count and span-of-control) and at loading (limited by ambulance availability and traffic). At well-managed MCI, the goal is patient time-to-OR <60 minutes for surgical RED tags; commonly fails when transport bottleneck dominates. EmergencyNet's bit-packed LoRa packet supports the hand-off from CCP to base — replaces paper triage tag for environments with no cellular. Reference: WHO MCM Field Manual + ATLS 11th + Israeli MASCAL doctrine.",
+      "section": "Casualty Flow",
+      "page": 1,
+      "tags": ["casualty_flow", "CCP", "triage_point", "loading_zone", "WHO_MCM", "ATLS", "Israeli_MASCAL", "command"]
+    },
+    {
+      "id": "WHO-MCM-EMT-DEPLOYMENT",
+      "text": "WHO Emergency Medical Team (EMT) Classification, formalized post-Haiti 2010, defines internationally-deployable medical surge capacity. Type 1 fixed: outpatient care, ≥50 OPD/day, no surgery; suitable for community-level outreach. Type 1 mobile: outreach to remote/cut-off villages. Type 2: ≥100 OPD/day, ≥7 inpatient beds, surgery capacity, ~20 staff; field hospital. Type 3: ≥100 OPD/day, ≥40 inpatient beds, 2 OR, ICU, ~30+ staff including specialist anesthetist + surgeon; full forward operating hospital. Specialized cells: rehabilitation, infection management (Ebola), maternal/newborn, mental health, burn, dialysis, pediatric. Self-sufficiency: 14 days of supplies (water, power, sanitation, fuel). Pre-deployment registration with WHO + originating-country review of standards, supplies, ethics, financial arrangements. Activation is via host-country government request through cluster system (Health Cluster) or WHO Operational Centre. Recent deployments: Türkiye-Syria 2023 (88 EMTs deployed), Mozambique cyclone Idai 2019, COVID-19 surge support. EmergencyNet operates within an EMT field-hospital context — LoRa mesh works in EMT context where local cellular may be saturated. Reference: WHO EMT Classification 2017.",
+      "section": "EMT Deployment",
+      "page": 1,
+      "tags": ["EMT", "Type_1", "Type_2", "Type_3", "self_sufficiency", "Haiti_2010", "Turkey_2023", "WHO_MCM", "command"]
+    },
+    {
+      "id": "WHO-MCM-HOSPITAL-SURGE",
+      "text": "Hospital surge capacity is the ability to respond to a sudden increase in patient volume beyond normal operating capacity. Components: space (physical bed expansion, conversion of corridors / cafeterias to inpatient space), staff (call-back of off-duty, mutual aid from other hospitals, retired staff activation, medical-volunteer credentialing), supplies (rapid-deploy stockpile, regional / national strategic reserve), systems (electronic health record surge, communications). Trigger thresholds: typically 2x normal census for 'surge', 3-4x for 'crisis surge'. Crisis-standards-of-care declared when even surge capacity is exceeded — allows triage decisions (e.g., ventilator allocation) different from routine; legal frameworks (CMS waiver in US, equivalent in other countries) enable. Hospital divert authority: a hospital may close to incoming patients when capacity is exceeded; mass casualty incidents typically suspend divert authority by Operations decision. EmergencyNet's anomaly_detector + SITREP can feed hospital surge decisions — visibility into incoming patient volume allows pre-positioning of resources. Reference: WHO MCM Field Manual + AHRQ Hospital Surge Capacity report.",
+      "section": "Hospital Surge",
+      "page": 1,
+      "tags": ["hospital_surge", "crisis_standards", "divert_authority", "ventilator_allocation", "WHO_MCM", "AHRQ", "command"]
+    },
+    {
+      "id": "WHO-MCM-DEAD-MANAGEMENT",
+      "text": "Management of the dead in mass-casualty incidents is a separate function from triage and treatment, with its own protocol. Per WHO and PAHO Management of Dead Bodies after Disasters guidance: (1) deceased should be moved to a designated temporary morgue (refrigerated trailer if available) or a covered staging area; (2) accurate identification is critical — photograph face plus identifying features, document jewelry, distinguishing marks, dental, fingerprints, tattoo; DNA samples for unidentified remains; (3) dignified handling — cover bodies during transport, do not stack, secular and religious considerations for body preparation; (4) family identification — Family Reunification Center (FRC) coordinates with mortuary process, with photographic identification by family or DNA matching for advanced decomposition; (5) repatriation and release after death certificate issuance and any required forensic process complete. Common errors: misidentification due to incomplete cataloguing, secondary trauma to families during identification, religious / cultural insensitivity. EmergencyNet's BLACK tag provides a deterministic anchor in patient record — does not need to be revisited at secondary triage. Reference: WHO + PAHO Management of Dead Bodies.",
+      "section": "Management of Dead",
+      "page": 1,
+      "tags": ["mortuary", "FRC", "identification", "dignity", "WHO_MCM", "PAHO", "BLACK_tag", "command"]
+    },
+    {
+      "id": "WHO-MCM-MASS-EVACUATION",
+      "text": "Mass evacuation in disaster context — moving large populations away from a hazard zone — has its own MCM doctrine separate from individual triage. Considerations: (1) timing — pre-event evacuation (hurricane track) vs reactive evacuation (post-event nuclear release); (2) modality — road (highway capacity), rail (where applicable), maritime (ferry, naval, see Australia 2020 Mallacoota), air (helicopter for cut-off communities, Nepal 2015); (3) vulnerable population planning — hospital evacuation has specific protocols (ventilator-dependent, dialysis-dependent require coordinated transfer to receiving facilities); home-bound patients require pre-registered registries; (4) shelter capacity at destination (Cuban hurricane shelter system is gold standard, pre-cleared and stocked); (5) family-unit preservation — separating children from parents during chaotic evacuation creates secondary trauma and reunification crisis (Hurricane Katrina 2005 documented hundreds of children separated for weeks). Reference: WHO MCM Field Manual + Cuban Hurricane Shelter System + Hurricane Katrina lessons.",
+      "section": "Mass Evacuation",
+      "page": 1,
+      "tags": ["mass_evacuation", "vulnerable_population", "ventilator_dependent", "Cuban_shelter", "Katrina", "WHO_MCM", "command"]
+    },
+    {
+      "id": "WHO-MCM-TRIAGE-TAG-SYSTEMS",
+      "text": "Triage tag systems standardize victim identification and tag color (RED immediate, YELLOW delayed, GREEN minor, BLACK expectant/dead). Common systems: (1) METTAG — single-piece tear-off with severity colors and patient barcode; (2) SMART tag — reflective fluorescent for night ops, fold-out for additional information; (3) Israeli triage tag — barcode-driven, electronic readback. Modern electronic alternatives include EmergencyNet — patient record persists in digital form, tag color is computed from screening + risk_engine. Tags must withstand environmental conditions (rain, dust, blood, smoke). Tag-handoff loss is a documented MCI failure mode — paper tags lost in transit, illegible writing, multiple casualties with same identifier. Tag re-triage discipline: do not remove or replace tags during transport unless triage officer authorization at intake; otherwise document on supplementary card. EmergencyNet bit-packed LoRa packet eliminates paper-loss failure mode for the field-to-base hand-off. Reference: WHO MCM Field Manual + Israeli MASCAL doctrine.",
+      "section": "Triage Tag Systems",
+      "page": 1,
+      "tags": ["triage_tag", "METTAG", "SMART_tag", "Israeli_tag", "electronic_triage", "WHO_MCM", "Q1_relevant", "command"]
+    },
+    {
+      "id": "WHO-MCM-COMMUNICATIONS",
+      "text": "Communications doctrine in MCM emphasizes redundancy, plain-language interoperability, and fallback for cellular failure (which is near-universal in major incidents). Recommended layers: (1) primary: cellular voice + data (works at small / moderate incidents); (2) secondary: agency radio (UHF/VHF, but agency-specific frequencies limit interoperability — see JESIP UK Manchester 2017 lesson); (3) tertiary: satellite phone (Iridium, Inmarsat — deployed in EMT field hospitals as standard); (4) emergency: amateur radio (HF/VHF/UHF — Taiwan 921 codified amateur radio in formal command, see TW-921-USAR-LESSONS); (5) low-bandwidth mesh (LoRa, Meshtastic — emerging operational layer for very-low-bandwidth telemetry across long distance, see EmergencyNet). Cross-agency interoperability requires plain English (ICS doctrine), shared frequency plans (ICS-205), and trained joint exercises. EmergencyNet directly addresses cellular-failure scenario with LoRa mesh and is interoperable across radios. Reference: WHO MCM Field Manual + JESIP UK doctrine.",
+      "section": "MCM Communications",
+      "page": 1,
+      "tags": ["communications", "interoperability", "cellular_failure", "Iridium", "amateur_radio", "LoRa", "Meshtastic", "WHO_MCM", "JESIP"]
+    },
+    {
+      "id": "WHO-MCM-DOCUMENTATION",
+      "text": "Documentation in MCM is essential for: clinical handoff (incoming hospital needs context), legal record (incident review, criminal proceedings), epidemiology (after-action report, public health analysis), family reunification (matching unidentified to missing-person reports), insurance and compensation. Core documents per WHO: triage tag with patient identifier; treatment record (interventions, drug administration, response); transport record (chain of custody, hospital destination); death certificate / external examination for fatalities. In paper-based systems, documentation loss is a significant failure mode (tags torn, treatment record illegible, transport record lost). Electronic systems (EmergencyNet, equivalent products) eliminate this failure mode but introduce dependency on power and connectivity — defense in depth requires electronic primary + paper backup. Privacy and access control requirements per local jurisdiction (HIPAA US, GDPR EU, PIPL China, PDPA Singapore). EmergencyNet stores patient record in chroma_db with audit log of every touch — supports legal and AAR requirements. Reference: WHO MCM Field Manual + applicable jurisdiction privacy law.",
+      "section": "MCM Documentation",
+      "page": 1,
+      "tags": ["documentation", "audit_log", "HIPAA", "GDPR", "PIPL", "after_action", "WHO_MCM", "command"]
+    }
+  ]
+}

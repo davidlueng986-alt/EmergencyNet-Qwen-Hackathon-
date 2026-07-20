@@ -1,0 +1,238 @@
+{
+  "_meta": {
+    "version": "0.1",
+    "filename": "care.json",
+    "purpose": "Care directives keyed by visible injury, hidden risk code (Q5-Q12), and triage tag. Field AI uses entries matching the patient to seed tactical_advice. NEVER queried as RAG — pure dict lookup.",
+    "content_provenance": "AI-generated for hackathon demo. All entries cross-referenced against the cited ref_category in training-time knowledge. NOT clinically validated for deployment. Real deployment requires medical-director review of every entry.",
+    "ref_categories_used": [
+      "TCCC Guidelines (Tactical Combat Casualty Care, public)",
+      "PHTLS 10th ed (Prehospital Trauma Life Support, NAEMT, paywall)",
+      "ATLS 11th ed (Advanced Trauma Life Support, ACS, paywall)",
+      "ABLS Provider Manual (Advanced Burn Life Support, ABA)",
+      "AHA BLS/ACLS Guidelines (American Heart Association)",
+      "PALS Provider Manual (Pediatric Advanced Life Support, AHA)",
+      "WHO Crush Syndrome Protocol",
+      "CRASH-2 trial (TXA <3h window, Lancet 2010)",
+      "CDC Blast Injury Primer (public)",
+      "WHO Mass Casualty Management 2007 (public)",
+      "ALSO (Advanced Life Support in Obstetrics, AAFP)"
+    ],
+    "key_format": {
+      "Q5_crush_syndrome": "hidden risk code with descriptive suffix",
+      "major_hemorrhage": "visible injury code",
+      "RED_general": "triage tag general directive when no specific match"
+    }
+  },
+
+  "entries": {
+
+    "Q5_crush_syndrome": {
+      "directive": "Establish two large-bore IVs (14-16G) BEFORE extrication if access allows. Run 1L normal saline bolus pre-release. Place cardiac monitor — watch for peaked T waves, widened QRS, arrhythmia immediately post-release. Mark time of extrication.",
+      "do_not": [
+        "Do not give potassium-containing fluids (avoid Ringer's Lactate if hyperkalemia suspected)",
+        "Do not give succinylcholine if RSI needed (use rocuronium)",
+        "Do not loosen entrapment bindings until IV access + monitor in place"
+      ],
+      "ref_category": "ATLS 11th + WHO Crush Syndrome Protocol"
+    },
+
+    "Q6_occult_internal_bleed": {
+      "directive": "Treat as hypovolemic shock until proven otherwise. Permissive hypotension (target SBP 80-90 if no head injury). TXA 1g IV if within 3h of injury. Cardiac monitor. Prepare for rapid transport.",
+      "do_not": [
+        "Do not over-resuscitate with crystalloid (worsens dilutional coagulopathy)",
+        "Do not delay transport for further assessment if mechanism suggests intra-abdominal or pelvic bleed"
+      ],
+      "ref_category": "PHTLS 10th + CRASH-2 trial"
+    },
+
+    "Q7_pregnancy_complication": {
+      "directive": "Position patient in left lateral decubitus (relieves IVC compression). Establish IV access. If active vaginal bleeding, count and save pads. If seizure or severe hypertension, treat as eclampsia — protect airway, do not delay transport for full workup. Document fetal movement if reported.",
+      "do_not": [
+        "Do not let patient lie flat supine (IVC compression reduces cardiac output)",
+        "Do not deliver in field unless crowning visible — transport to OB-capable facility"
+      ],
+      "ref_category": "ALSO + WHO Pregnancy Emergency Care"
+    },
+
+    "Q8_altered_mental_status": {
+      "directive": "Protect airway (recovery position if no spinal concern, otherwise log-roll with C-spine control). Check glucose if test available. Pupils + GCS every 5 min. Document last known normal time. High-flow O2 if SpO2 < 94%.",
+      "do_not": [
+        "Do not assume intoxication — exclude hypoglycemia, head injury, stroke first",
+        "Do not give naloxone empirically without clear opioid mechanism in trauma context"
+      ],
+      "ref_category": "ATLS 11th + AHA Stroke Algorithm"
+    },
+
+    "Q9_airway_burn": {
+      "directive": "High-flow O2 via non-rebreather mask. Sit patient upright if conscious. Watch for stridor, hoarseness, drooling — these are intubation triggers but require trained personnel. Expedite transport to burn center.",
+      "do_not": [
+        "Do not intubate prophylactically without trained personnel and equipment for difficult airway",
+        "Do not give large IV fluid boluses (worsens airway edema) — follow Parkland once weight + TBSA known",
+        "Do not apply ice to facial burns"
+      ],
+      "ref_category": "ATLS 11th Ch 9 + ABLS Provider Manual"
+    },
+
+    "Q10_neurogenic_shock": {
+      "directive": "Maintain spinal precautions throughout (cervical collar + log-roll). Hypotension with bradycardia + warm-pink skin distinguishes neurogenic from hemorrhagic shock. Cautious fluid bolus 500ml NS, reassess. Document motor + sensory level.",
+      "do_not": [
+        "Do not aggressively fluid-resuscitate (risk of pulmonary edema in neurogenic shock)",
+        "Do not remove cervical collar to assess",
+        "Do not log-roll without minimum 4 rescuers if practical"
+      ],
+      "ref_category": "ATLS 11th Spinal Trauma Ch + AANS Guidelines"
+    },
+
+    "Q11_geriatric_anticoag_head": {
+      "directive": "Treat as high-risk intracranial bleed even if GCS 15 and asymptomatic at scene. Document medication list verbatim (warfarin, DOACs, antiplatelets). Expedite transport to CT-capable facility. Frequent re-assessment for late deterioration.",
+      "do_not": [
+        "Do not clear from scene based on normal mental status alone",
+        "Do not delay transport waiting for symptom development"
+      ],
+      "ref_category": "Geriatric Trauma Guidelines + ATLS 11th Special Populations"
+    },
+
+    "Q12_blast_lung": {
+      "directive": "High-flow O2. Look for cyanosis, hemoptysis, subcutaneous emphysema, chest wall asymmetry. If suspected pneumothorax with hemodynamic instability — needle decompression by trained personnel only. Permissive hypotension acceptable, avoid fluid overload.",
+      "do_not": [
+        "Do not give large fluid boluses (worsens pulmonary contusion)",
+        "Do not give positive-pressure ventilation aggressively if tension pneumothorax suspected"
+      ],
+      "ref_category": "CDC Blast Injury Primer + ATLS 11th Thoracic Trauma"
+    },
+
+    "major_hemorrhage": {
+      "directive": "Apply direct pressure first. If extremity bleeding uncontrolled in 30 sec, place CAT tourniquet 5-7 cm proximal to wound (not over a joint). Tighten until bleeding stops. Mark 'TQ' and exact time on the patient. TXA 1g IV if within 3h.",
+      "do_not": [
+        "Do not loosen tourniquet to check bleeding once applied",
+        "Do not place tourniquet over a joint",
+        "Do not apply tourniquet for minor bleeding controllable with pressure"
+      ],
+      "ref_category": "TCCC Guidelines + CRASH-2 trial"
+    },
+
+    "burn_major": {
+      "directive": "Stop the burning process (remove from source, smother flames, irrigate chemical with water 15+ min if no other contraindication). Calculate %TBSA by Rule of Nines. Parkland formula: 4ml * kg * %TBSA over 24h, half in first 8h from time of burn. Cover with dry sterile burn sheets. Keep patient warm.",
+      "do_not": [
+        "Do not apply ice or cold water to large burns (causes hypothermia + worsens injury)",
+        "Do not break blisters",
+        "Do not apply topical creams or ointments in field",
+        "Do not delay transport for fluid resuscitation calculation"
+      ],
+      "ref_category": "ABLS Provider Manual + ATLS 11th Ch 9"
+    },
+
+    "burn_minor": {
+      "directive": "Cool with running water for 15-20 minutes if accessible. Cover with clean dry dressing. Oral analgesia if able to swallow. Refer for follow-up if burn crosses joint, involves face/hands/perineum, or >5% TBSA.",
+      "do_not": [
+        "Do not apply ice directly to skin",
+        "Do not use butter, toothpaste, or home remedies",
+        "Do not pop blisters"
+      ],
+      "ref_category": "ABLS + WHO Burns Field Care"
+    },
+
+    "open_fracture": {
+      "directive": "Cover wound with sterile saline-moistened gauze. Splint in position found if no distal pulse compromise. Document distal pulse, motor, sensation before AND after splinting. Antibiotics within 1 hour if able (cefazolin 2g IV or equivalent).",
+      "do_not": [
+        "Do not push exposed bone back under skin",
+        "Do not delay transport for definitive splinting",
+        "Do not apply tourniquet for fracture-only bleeding (use direct pressure)"
+      ],
+      "ref_category": "PHTLS 10th + Gustilo-Anderson Classification"
+    },
+
+    "closed_fracture": {
+      "directive": "Splint above and below the fracture in position found. Document distal neurovascular status before and after splinting. Ice + elevation if not contraindicated. Analgesia per protocol.",
+      "do_not": [
+        "Do not attempt reduction unless no pulse distal AND trained",
+        "Do not over-tighten splint (compartment syndrome risk)"
+      ],
+      "ref_category": "PHTLS 10th + ATLS 11th Musculoskeletal"
+    },
+
+    "amputation": {
+      "directive": "Control bleeding with direct pressure first; tourniquet if uncontrolled. Wrap amputated part in saline-moist gauze, place in sealed bag, place bag on ice (NOT direct ice contact with tissue). Bring with patient. Time-critical for replantation.",
+      "do_not": [
+        "Do not place amputated part directly on ice or in water",
+        "Do not discard the amputated part — bring it",
+        "Do not delay transport waiting for full search of small parts"
+      ],
+      "ref_category": "ATLS 11th + ASSH Replantation Guidelines"
+    },
+
+    "chest_trauma": {
+      "directive": "Expose chest. Look for paradoxical movement (flail), open wound (sucking chest wound — apply three-sided occlusive dressing), asymmetric breath sounds, tracheal deviation, subcutaneous emphysema. Position semi-upright if no spinal concern. High-flow O2.",
+      "do_not": [
+        "Do not seal open chest wound on all four sides (causes tension pneumothorax)",
+        "Do not give positive-pressure ventilation aggressively if tension pneumothorax not yet decompressed"
+      ],
+      "ref_category": "ATLS 11th Thoracic Trauma + PHTLS 10th"
+    },
+
+    "head_trauma": {
+      "directive": "Maintain C-spine precautions. Document initial GCS. Reassess every 5 min — any drop is a high-priority finding. Position head-up 30 degrees if no spinal concern. Avoid hypoxia and hypotension (both worsen secondary brain injury). High-flow O2 if SpO2 < 94%.",
+      "do_not": [
+        "Do not hyperventilate (causes cerebral vasoconstriction, worsens injury)",
+        "Do not assume intoxication — assume head injury until proven otherwise"
+      ],
+      "ref_category": "ATLS 11th + Brain Trauma Foundation Guidelines"
+    },
+
+    "spinal_suspected": {
+      "directive": "Manual in-line stabilization, then apply rigid cervical collar. Log-roll with minimum 4 rescuers if possible. Long backboard for extrication, may remove for transport per local protocol. Document motor + sensory at multiple dermatomes.",
+      "do_not": [
+        "Do not remove helmet (sports/motorcycle) unless airway compromised and no spare hands",
+        "Do not allow patient to flex/extend neck during assessment"
+      ],
+      "ref_category": "ATLS 11th Spinal Trauma + NEXUS Criteria"
+    },
+
+    "pediatric_under_8": {
+      "directive": "Use length-based dosing tape (Broselow) if available. Pediatric vital sign ranges differ — tachypnea + tachycardia threshold lower. IO access if IV fails after 2 attempts or 90 sec. Smaller airway size, smaller bag for BVM. Family-centered approach — let parent stay if possible.",
+      "do_not": [
+        "Do not use adult drug doses",
+        "Do not separate from parent unless absolutely required",
+        "Do not delay transport for prolonged IV attempts — go IO"
+      ],
+      "ref_category": "PALS Provider Manual + JumpSTART Triage"
+    },
+
+    "RED_general": {
+      "directive": "Immediate intervention required. Reassess airway, breathing, circulation continuously. Two large-bore IV access. Cardiac monitor. Prepare for rapid transport to highest-capability available facility. Do not delay scene time more than 10 min for stable interventions.",
+      "do_not": [
+        "Do not engage in extensive on-scene assessment — load and go",
+        "Do not skip reassessment cycle (vitals every 5 min minimum)"
+      ],
+      "ref_category": "PHTLS 10th Load-and-Go Criteria"
+    },
+
+    "YELLOW_general": {
+      "directive": "Urgent but stable. Complete primary survey on scene. Establish IV access if indicated. Vitals every 15 min. Transport to appropriate-level facility — does not require highest-trauma center necessarily. Pain control per protocol.",
+      "do_not": [
+        "Do not skip detailed secondary survey",
+        "Do not transport before completing splinting / wound dressing if patient is stable"
+      ],
+      "ref_category": "WHO MCM + START Algorithm"
+    },
+
+    "GREEN_general": {
+      "directive": "Walking wounded. Move to designated GREEN holding area. Document patient identity + chief complaint. Recheck for missed injuries at scheduled intervals. Group transport (bus, multi-patient vehicle) acceptable.",
+      "do_not": [
+        "Do not occupy ambulance resources for GREEN unless no other transport",
+        "Do not lose track of GREEN patients in chaotic scenes — registration is critical"
+      ],
+      "ref_category": "START Algorithm + WHO MCM"
+    },
+
+    "BLACK_general": {
+      "directive": "Expectant or deceased. Document time, location (GPS if available), brief description. Cover respectfully. Do not occupy transport resources. Inform family liaison / chaplain if available. Coroner / medical examiner per local protocol.",
+      "do_not": [
+        "Do not move body unless required for scene safety",
+        "Do not commit ambulance to BLACK transport in active MCI"
+      ],
+      "ref_category": "WHO MCM + NAEMSP MCI Guidelines"
+    }
+
+  }
+}

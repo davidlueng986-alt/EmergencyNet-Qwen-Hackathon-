@@ -1,0 +1,163 @@
+{
+  "_meta": {
+    "version": "0.1",
+    "filename": "transport.json",
+    "purpose": "Transport class determination rules. Field AI's transport_class output MUST match the class returned by the first matching rule, OR be a more conservative escalation. Set membership against enum enforced by safety filter.",
+    "content_provenance": "AI-generated rule set aligned with NIMS ICS resource typing concepts, WHO MCM transport prioritization, and AMPA (Air Medical Physician Association) HEMS criteria. NOT a validated EMS dispatch matrix. Real deployment must conform to local EMS protocols.",
+    "ref_categories_used": [
+      "WHO Mass Casualty Management 2007 (public)",
+      "NIMS ICS Resource Typing (FEMA, public)",
+      "AMPA HEMS Indications (Air Medical Physician Association)",
+      "INSARAG Methodology (UN OCHA, public)"
+    ],
+    "transport_class_enum": [
+      "walking_or_bus",
+      "BLS",
+      "ALS",
+      "ALS_decon_required",
+      "helicopter_if_available",
+      "refuse_transport_treat_in_place",
+      "team_withdraw_recall",
+      "no_transport_marker_only"
+    ],
+    "escalation_order_low_to_high": "walking_or_bus < BLS < ALS < ALS_decon_required < helicopter_if_available",
+    "special_classes_explanation": {
+      "refuse_transport_treat_in_place": "Patient cannot be safely moved due to scene hazard. Treat where patient is, await scene clear.",
+      "team_withdraw_recall": "Scene is dangerous to rescuers. ALL rescuers withdraw. Mark patient location for re-entry. This OVERRIDES all patient-level transport decisions.",
+      "no_transport_marker_only": "Patient is deceased (BLACK tag). Mark location, do not occupy transport. Only valid if triage_tag == BLACK."
+    },
+    "matching_rules": "Rules are evaluated TOP TO BOTTOM. First match wins. Place most specific / most conservative rules FIRST.",
+    "match_fields": {
+      "triage_tag": "exact match on RED|YELLOW|GREEN|BLACK",
+      "any_risk": "rule matches if patient.hidden_risks_fired contains ANY of the listed Q codes",
+      "all_risk": "rule matches only if ALL listed Q codes are in hidden_risks_fired",
+      "any_injury": "rule matches if visible_injuries contains ANY listed",
+      "environment": "rule matches if environment is in the listed set",
+      "age_min/age_max": "patient age bounds"
+    }
+  },
+
+  "rules": [
+
+    {
+      "id": "scene_unsafe_override",
+      "match": {"environment": ["chemical_suspected", "chemical_known"], "environment_severity": "responder_threatened"},
+      "class": "team_withdraw_recall",
+      "reasoning": "Scene poses immediate threat to rescuers. Withdraw, mark patient location, await HazMat clearance. Patient-level transport cannot proceed.",
+      "ref_category": "OSHA HAZWOPER 1910.120 + INSARAG"
+    },
+
+    {
+      "id": "deceased_marker_only",
+      "match": {"triage_tag": "BLACK"},
+      "class": "no_transport_marker_only",
+      "reasoning": "Deceased patient. Mark location and document. Do not occupy transport resources during active MCI.",
+      "ref_category": "WHO MCM + NAEMSP MCI"
+    },
+
+    {
+      "id": "red_chemical_decon",
+      "match": {"triage_tag": "RED", "environment": ["chemical_suspected", "chemical_known"]},
+      "class": "ALS_decon_required",
+      "reasoning": "Critical patient with chemical exposure. Must complete decontamination before transport to avoid contaminating receiving facility.",
+      "ref_category": "ERG 2024 + OSHA HAZWOPER"
+    },
+
+    {
+      "id": "red_time_critical_distance",
+      "match": {"triage_tag": "RED", "any_injury": ["amputation", "major_hemorrhage", "chest_trauma"], "transport_time_min_to_facility": 20},
+      "class": "helicopter_if_available",
+      "reasoning": "Time-critical critical injury with extended ground transport time. HEMS preferred if available within 20 min. Otherwise default to ALS ground.",
+      "ref_category": "AMPA HEMS Indications"
+    },
+
+    {
+      "id": "red_isolated_obstetric",
+      "match": {"triage_tag": "RED", "any_risk": ["Q7"]},
+      "class": "helicopter_if_available",
+      "reasoning": "Critical obstetric emergency requires OB-capable facility. HEMS preferred if available; otherwise ALS to nearest OB capable.",
+      "ref_category": "ALSO + AMPA"
+    },
+
+    {
+      "id": "red_with_high_risk_qs",
+      "match": {"triage_tag": "RED", "any_risk": ["Q5", "Q6", "Q8", "Q9", "Q10", "Q11", "Q12"]},
+      "class": "ALS",
+      "reasoning": "Critical instability with hidden risk requires ALS-level airway management, IV access, drug administration, and continuous monitoring.",
+      "ref_category": "NIMS ICS Resource Typing + WHO MCM"
+    },
+
+    {
+      "id": "red_pediatric",
+      "match": {"triage_tag": "RED", "age_max": 14},
+      "class": "ALS",
+      "reasoning": "Critical pediatric patient requires ALS with pediatric-equipped unit. Consider PHEMS if available.",
+      "ref_category": "PALS + AMPA Pediatric Criteria"
+    },
+
+    {
+      "id": "red_default",
+      "match": {"triage_tag": "RED"},
+      "class": "ALS",
+      "reasoning": "All critical patients default to ALS for monitoring + intervention capability during transport.",
+      "ref_category": "WHO MCM Transport Priority 1"
+    },
+
+    {
+      "id": "yellow_high_risk_q",
+      "match": {"triage_tag": "YELLOW", "any_risk": ["Q5", "Q6", "Q7", "Q8", "Q9", "Q10", "Q11", "Q12"]},
+      "class": "ALS",
+      "reasoning": "Hidden risk should normally auto-upgrade triage to RED. If risk present but tag remains YELLOW, transport at ALS level pending re-evaluation.",
+      "ref_category": "Hidden risk safety net"
+    },
+
+    {
+      "id": "yellow_decon",
+      "match": {"triage_tag": "YELLOW", "environment": ["chemical_suspected", "chemical_known"]},
+      "class": "ALS_decon_required",
+      "reasoning": "Chemical exposure requires decon prior to transport regardless of patient acuity.",
+      "ref_category": "ERG 2024 + OSHA HAZWOPER"
+    },
+
+    {
+      "id": "yellow_default",
+      "match": {"triage_tag": "YELLOW"},
+      "class": "BLS",
+      "reasoning": "Stable urgent patient. BLS adequate. May mix-load up to 2 YELLOW per ambulance per local protocol.",
+      "ref_category": "WHO MCM Transport Priority 2"
+    },
+
+    {
+      "id": "green_decon",
+      "match": {"triage_tag": "GREEN", "environment": ["chemical_suspected", "chemical_known"]},
+      "class": "BLS",
+      "reasoning": "Even GREEN patients require decontamination before bus transport. Use BLS with decon-aware crew.",
+      "ref_category": "ERG 2024 + OSHA HAZWOPER"
+    },
+
+    {
+      "id": "green_default",
+      "match": {"triage_tag": "GREEN"},
+      "class": "walking_or_bus",
+      "reasoning": "Ambulatory or minor. Group transport (bus, van, multi-patient vehicle) acceptable to preserve ambulance capacity for higher-acuity.",
+      "ref_category": "START Algorithm + WHO MCM"
+    },
+
+    {
+      "id": "treat_in_place_collapse",
+      "match": {"environment": ["structural_collapse_active"], "triage_tag": "RED"},
+      "class": "refuse_transport_treat_in_place",
+      "reasoning": "Cannot safely move patient out of active collapse zone. Treat where patient is, await USAR clearance for extrication path.",
+      "ref_category": "INSARAG Methodology"
+    },
+
+    {
+      "id": "default_fallback",
+      "match": {},
+      "class": "BLS",
+      "reasoning": "Fallback rule when no specific match. BLS default. Manual review recommended.",
+      "ref_category": "Defensive default"
+    }
+
+  ]
+}

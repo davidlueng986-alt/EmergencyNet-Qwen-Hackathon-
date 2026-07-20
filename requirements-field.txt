@@ -1,0 +1,4 @@
+# Minimal Android/Termux field runtime.
+gradio>=4.36,<6
+# Allows Gradio/httpx to import when an operator network sets ALL_PROXY=socks*.
+socksio>=1.0,<2

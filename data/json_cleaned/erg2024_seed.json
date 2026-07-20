@@ -1,0 +1,195 @@
+{
+  "source": "ERG_2024",
+  "collection": "hazmat",
+  "chunks": [
+    {
+      "id": "ERG2024-G117-CHLORINE",
+      "text": "Chlorine (UN1017, Guide 117) is a yellow-green gas with a pungent odor, heavier than air. Initial isolation: 30 m for small spills, 60 m for large. Protective action: 200 m downwind for small daytime spills, expanding to 1.6 km for large nighttime spills. PPE: SCBA + Level B chemical protective suit; Level A for vapor-cloud entry. Clinical exposure: eye/throat irritation at <5 ppm, pulmonary edema delayed 6-24 hours at >50 ppm, immediate fatality risk above 1000 ppm via laryngospasm. Treatment: remove from source, copious water irrigation of eyes and skin, supportive oxygen, bronchodilators, corticosteroids for severe inhalation. Decontamination outside hospital perimeter is mandatory — chlorine-saturated clothing continues off-gassing. Avoid acidic neutralizers. All exposed patients require 6-hour observation for delayed pulmonary edema, even if asymptomatic at presentation. Common sources: water treatment plants, industrial bleaching, swimming-pool chemicals, chemical-tanker rail or road incidents. EmergencyNet hidden-risk Q9 (airway burn) escalates No to Yes if patient was downwind of release. Reference: PHMSA ERG 2024 Guide 117.",
+      "section": "Guide 117 - Chlorine",
+      "page": 134,
+      "tags": ["chlorine", "UN1017", "toxic", "level_b", "level_a", "pulmonary_edema", "Q9_relevant", "decontamination"]
+    },
+    {
+      "id": "ERG2024-G125-AMMONIA",
+      "text": "Anhydrous ammonia (UN1005, Guide 125) is a colorless gas with a sharp odor at very low concentrations (<5 ppm). Initial isolation: 30 m small / 150 m large. Protective action: 100 m downwind small daytime / 800 m large nighttime. Lighter than air — disperses upward, but pools in low-lying enclosed spaces. PPE: SCBA + Level A for high concentration entry; Level B downwind decon. Clinical: <50 ppm eye/throat irritation; 50-300 ppm severe mucosal damage; >300 ppm pulmonary edema delayed 6-24h; >1000 ppm laryngospasm + immediate fatality risk. Treatment: copious water irrigation 15-20 min for skin and eyes; never neutralize with acid (exothermic); supportive oxygen, bronchodilators, observation. Common sources: industrial refrigeration (cold storage, ice rinks), fertilizer manufacture and transport, agricultural anhydrous tanks. Shelter-in-place vs evacuation: short releases <30 min often safer to shelter sealed; longer releases require evacuation. EmergencyNet Q9 (airway burn) escalates if downwind exposure documented. Reference: PHMSA ERG 2024 Guide 125.",
+      "section": "Guide 125 - Ammonia",
+      "page": 142,
+      "tags": ["ammonia", "UN1005", "toxic", "level_a", "level_b", "pulmonary_edema", "Q9_relevant", "refrigeration"]
+    },
+    {
+      "id": "ERG2024-G117-HYDROGEN-SULFIDE",
+      "text": "Hydrogen sulfide (H2S, UN1053, Guide 117) is a colorless gas with rotten-egg odor at very low concentrations, but olfactory fatigue at >100 ppm masks deadly higher concentrations. Heavier than air — accumulates in pits, sewers, manholes, ship holds. Initial isolation: 30 m small / 150 m large. Protective action: 100 m / 800 m downwind. PPE: SCBA + Level B; Level A for confined-space entry. Clinical: <10 ppm odor; 100-300 ppm respiratory irritation, knockdown threshold; 700+ ppm immediate loss of consciousness within seconds, death within minutes; mechanism is cellular asphyxiation (cytochrome oxidase inhibition similar to cyanide). Antidote: amyl nitrite + sodium nitrite (induces methemoglobinemia binding sulfide) followed by sodium thiosulfate; supportive oxygen and ventilation. Common sources: oil and gas wells, sewage treatment, manure pits, geothermal sites, paper mills. Confined-space rescue protocol mandatory — never enter without SCBA and rescue line. EmergencyNet Q9 escalates for any inhalation symptom. Reference: PHMSA ERG 2024 Guide 117.",
+      "section": "Guide 117 - Hydrogen Sulfide",
+      "page": 134,
+      "tags": ["hydrogen_sulfide", "H2S", "UN1053", "toxic", "asphyxiant", "level_b", "level_a", "Q9_relevant", "confined_space"]
+    },
+    {
+      "id": "ERG2024-G119-CARBON-MONOXIDE",
+      "text": "Carbon monoxide (CO, UN1016, Guide 119) is a colorless, odorless gas — primary inhalation hazard in fires, vehicle exhaust, faulty heating systems, generators. PPE: SCBA mandatory for any structure with smoke or combustion. Clinical: COHb 10-20% headache, nausea; 20-30% impaired judgment; 30-40% confusion, weakness; 40-50% syncope; >50% coma, death. Pulse oximetry is unreliable (reads COHb as oxyhemoglobin) — needs co-oximetry or arterial blood gas. Treatment: high-flow 100% O2 via non-rebreather mask reduces half-life from ~5h (room air) to ~80 min (100% O2) to ~25 min (HBO 3 ATA). Hyperbaric indications: COHb >25%, loss of consciousness, neurological symptoms, pregnancy with COHb >15%, cardiac ischemia. Pediatric and pregnant patients have lower thresholds — fetal Hb has higher CO affinity. Always co-suspect cyanide in smoke inhalation (combustion of synthetics) — empirical hydroxocobalamin if shock or lactate >8. EmergencyNet Q9 escalation for any smoke exposure. Reference: PHMSA ERG 2024 Guide 119.",
+      "section": "Guide 119 - Carbon Monoxide",
+      "page": 138,
+      "tags": ["carbon_monoxide", "CO", "UN1016", "toxic", "smoke_inhalation", "hyperbaric", "Q9_relevant", "co_oximetry"]
+    },
+    {
+      "id": "ERG2024-G115-PROPANE-LPG",
+      "text": "Propane (UN1978, Guide 115) and liquefied petroleum gas (LPG) are flammable liquefied gases. Heavier than air — pools in low areas. Initial isolation: 800 m for large fire (BLEVE risk); 100 m for vapor-only release. PPE: structural firefighting turnout gear + SCBA for fire response; Level B for non-fire vapor release. Primary hazard: fire and BLEVE (Boiling Liquid Expanding Vapor Explosion). Vapor cloud explosion (VCE) risk between LEL (2.1%) and UEL (9.5%) in air. Cooling water on top of pressurized vessels is essential during fire impingement to prevent BLEVE — vessel cooling for 15+ minutes mandatory before approach. Toxicity is low (simple asphyxiant), but combustion products include CO + thermal injury + carbonaceous soot. Common sources: residential heating, vehicle fuel (auto-LPG), industrial process heating, commercial cooking. EmergencyNet incident: LPG depot or rail tanker fire warrants 800 m exclusion radius until fire suppression confirmed and tank intact. Q12 (close blast) escalation if BLEVE occurs. Reference: PHMSA ERG 2024 Guide 115.",
+      "section": "Guide 115 - Propane / LPG",
+      "page": 130,
+      "tags": ["propane", "LPG", "UN1978", "flammable", "BLEVE", "VCE", "Q12_relevant", "exclusion_zone"]
+    },
+    {
+      "id": "ERG2024-G128-GASOLINE",
+      "text": "Gasoline (UN1203, Guide 128) is a flammable liquid with vapor heavier than air. Pool fire and vapor cloud both significant hazards. Initial isolation: 50 m small / 300 m large for major spill or fire. PPE: structural firefighting turnout + SCBA for fire; Level B for vapor cloud monitoring. Clinical exposure: aspiration is the primary acute hazard — 'chemical pneumonitis' from inhaled liquid causes severe pulmonary injury, do not induce vomiting after ingestion. Skin contact causes defatting dermatitis with prolonged exposure. Inhalation of vapor (>500 ppm) causes CNS depression, headache, dizziness; >1000 ppm causes confusion, ataxia. Common sources: vehicle accidents, fuel tanker incidents, gas station fires, refinery process incidents. Tanker rollover scenarios require pool containment to prevent spread to ignition sources, drainage, water bodies. Tetraethyl lead phase-out reduces lead toxicity concern; benzene content (1-3%) remains a chronic carcinogen. EmergencyNet Q9 escalation for any aspiration or significant vapor exposure. Reference: PHMSA ERG 2024 Guide 128.",
+      "section": "Guide 128 - Gasoline",
+      "page": 148,
+      "tags": ["gasoline", "UN1203", "flammable", "aspiration", "vapor_cloud", "level_b", "Q9_relevant"]
+    },
+    {
+      "id": "ERG2024-G147-LITHIUM-BATTERY",
+      "text": "Lithium batteries (UN3480 / UN3481, Guide 147) include consumer (laptops, phones, e-bikes) and industrial (BESS, EV) types. Hazards: thermal runaway producing toxic gas mixture (HF, HCN, CO, electrolyte vapors), fire, explosion. Lithium-iron-phosphate (LFP) is slower runaway than NMC but produces same toxic mixture. PPE: SCBA + Level B minimum; Level A for opening sealed BESS enclosure (deflagration risk from accumulated H2). Suppression: water in copious quantity is appropriate for LFP and NMC (NOT lithium-metal primary cells); generates contaminated runoff requiring containment. Do NOT open hot enclosures — fresh air ignition causes deflagration; cool 24-72 hours minimum. EV battery fires: water from below at battery pack, 2000+ gallons typical; allow controlled burnout where infrastructure permits. Common scenarios: e-bike home fires (residential MCI), EV crash with battery breach, BESS facility incident, recycling center fire. Clinical: HF + HCN + CO simultaneous inhalation requires hydroxocobalamin (cyanide), high-flow O2 (CO), calcium gluconate gel (HF dermal). Reference: PHMSA ERG 2024 Guide 147.",
+      "section": "Guide 147 - Lithium Batteries",
+      "page": 164,
+      "tags": ["lithium", "UN3480", "BESS", "thermal_runaway", "HF", "HCN", "Q9_relevant", "Q12_relevant", "deflagration"]
+    },
+    {
+      "id": "ERG2024-G124-CHLORINE-DIOXIDE",
+      "text": "Chlorine dioxide (ClO2, UN9191, Guide 124) is a yellow-green gas used in water treatment and industrial bleaching. Initial isolation: 30 m small / 60 m large. Protective action: 200 m / 800 m downwind. PPE: SCBA + Level B. Clinical: more potent respiratory irritant than chlorine — pulmonary edema at lower concentrations (>5 ppm). Treatment same as chlorine: water irrigation, supportive O2, observation. Notable risk: 'Miracle Mineral Solution' (MMS) — sold as alternative-medicine product, when ingested or activated produces in-vivo chlorine dioxide; FDA warnings since 2010. Industrial scale incidents: paper mill, water treatment plant gas leaks. EmergencyNet Q9 escalation for any inhalation symptom. Distinguish from chlorine gas: ClO2 is more irritant per unit concentration; both produce delayed pulmonary edema. Common scenarios: water treatment plant emergency, paper mill release, residential MMS ingestion. Reference: PHMSA ERG 2024 Guide 124.",
+      "section": "Guide 124 - Chlorine Dioxide",
+      "page": 142,
+      "tags": ["chlorine_dioxide", "ClO2", "UN9191", "toxic", "MMS", "pulmonary_edema", "Q9_relevant", "level_b"]
+    },
+    {
+      "id": "ERG2024-G124-PHOSGENE",
+      "text": "Phosgene (COCl2, UN1076, Guide 124) is a colorless gas with characteristic odor of freshly mown hay; war gas with continued industrial use as isocyanate precursor. Initial isolation: 100 m small / 300 m large. Protective action: 800 m / 5 km downwind for large nighttime spills. PPE: SCBA + Level A for any vapor entry. Clinical: notably delayed presentation — initial mild irritation may be minimal, severe non-cardiogenic pulmonary edema at 6-72 hours post-exposure can be lethal. Latency makes triage especially difficult — asymptomatic patients require admission for 24-72h observation. Treatment: high-flow O2, supportive ventilation, corticosteroids early (before symptom onset if exposure documented), strict bed rest (exertion accelerates pulmonary edema onset). Industrial sources: isocyanate manufacture (toluene diisocyanate, methylene diphenyl diisocyanate plants), paint stripping (CHCl3 + heat), refrigerant decomposition. EmergencyNet Q9 mandatory escalation for ANY phosgene exposure documented, regardless of symptoms. Reference: PHMSA ERG 2024 Guide 124.",
+      "section": "Guide 124 - Phosgene",
+      "page": 142,
+      "tags": ["phosgene", "COCl2", "UN1076", "toxic", "war_gas", "delayed_pulmonary_edema", "Q9_relevant", "level_a"]
+    },
+    {
+      "id": "ERG2024-G134-FLAMMABLE-LIQUID",
+      "text": "Flammable liquids (UN1090 acetone, UN1170 ethanol, UN1219 isopropanol, etc, Guide 134) span solvents, fuels, paints. Initial isolation: 50 m small / 300 m large for fire. PPE: turnout + SCBA for fire; Level B for vapor exposure. Common solvents in industrial release: acetone (mild irritant, defatting), ethanol/isopropanol (intoxication hazard if ingested, irritant if vapor), methanol (severe — converts to formate, causes blindness, metabolic acidosis; treatment fomepizole or ethanol IV + folate + dialysis), MEK / methyl ethyl ketone (defatting, CNS depressant). Pool fires generate intense thermal radiation; flame fronts on flat surfaces propagate to ignition sources hundreds of meters away. Vapor heavier than air — accumulates in basements, drains, low areas. Clinical scenarios: industrial spill with multiple casualties exposed via inhalation + dermal; methanol-contaminated alcoholic beverage (mass poisoning, serial cases); paint-stripper inhalation. EmergencyNet Q8 (altered mental) and Q9 escalation for any significant solvent exposure with neurological symptom. Reference: PHMSA ERG 2024 Guide 134.",
+      "section": "Guide 128 - Flammable Liquids",
+      "page": 158,
+      "tags": ["flammable_liquid", "methanol", "acetone", "fomepizole", "Q8_relevant", "Q9_relevant", "level_b", "pool_fire"]
+    },
+    {
+      "id": "ERG2024-G154-CORROSIVE-ACID",
+      "text": "Corrosive acids (UN1830 sulfuric, UN1789 hydrochloric, UN2031 nitric, Guide 154) cause coagulative tissue necrosis with sharp boundary; severity scales with concentration and contact time. PPE: Level B with butyl rubber or Viton gloves; Level A for concentrated nitric (NOx fume); skin protection critical. Decontamination: copious water irrigation 20+ minutes for skin/eyes; do NOT neutralize with base (exothermic, worsens injury). Clinical: skin contact produces partial-to-full thickness chemical burn; ocular splash requires immediate Morgan lens or LR irrigation 30-60 min and ophthalmology; ingestion (most often pediatric or suicidal) causes oropharyngeal, esophageal, gastric necrosis — risk perforation, late stricture. Concentrated acid spill in confined space generates toxic vapor: sulfuric SO3, nitric NO2/NO, hydrochloric HCl mist. Burn surface area assessed by Lund-Browder (better in chemical injury than Wallace Rule of Nines). EmergencyNet Q9 escalation for inhalation; deep dermal burn affects fluid resuscitation per Parkland formula. Reference: PHMSA ERG 2024 Guide 154.",
+      "section": "Guide 154 - Corrosive Acids",
+      "page": 174,
+      "tags": ["acid", "sulfuric", "nitric", "hydrochloric", "corrosive", "level_b", "Q9_relevant", "Parkland"]
+    },
+    {
+      "id": "ERG2024-G154-CORROSIVE-BASE",
+      "text": "Corrosive bases (UN1823 sodium hydroxide, UN1813 potassium hydroxide, UN1719 caustic alkali, Guide 154) cause liquefactive necrosis — deeper, less self-limiting than acid burns. PPE: Level B with butyl or nitrile gloves. Decontamination: copious water 20+ minutes; no acid neutralization. Clinical: dermal exposure produces deep, slowly-evolving burn — initial appearance may underestimate eventual depth; ocular alkali splash is ophthalmic emergency (pH measurement until normalized, prolonged Morgan lens irrigation 60+ min); ingestion produces severe esophageal injury with high stricture rate. Industrial sources: chemical manufacture, drain cleaner (residential pediatric ingestion), battery fluid, soap manufacture. Distinct from acid: alkali continues penetrating tissue without surface limit, requires longer irrigation than acid burn. EmergencyNet Q9 escalation for ingestion or inhalation of strong base aerosol. Hospital management: endoscopy 12-24h for ingestion, ophthalmology consult for any eye injury. Reference: PHMSA ERG 2024 Guide 154.",
+      "section": "Guide 154 - Corrosive Bases",
+      "page": 174,
+      "tags": ["alkali", "sodium_hydroxide", "potassium_hydroxide", "corrosive", "level_b", "Q9_relevant", "endoscopy"]
+    },
+    {
+      "id": "ERG2024-G153-FLAMMABLE-SOLID-PHOSPHORUS",
+      "text": "White phosphorus (UN1381, Guide 136) and red phosphorus (UN1338, Guide 133) — military and industrial flammable solids. White phosphorus ignites spontaneously in air at >34°C, burns at high temperature continuing under skin if embedded in wound. PPE: turnout + SCBA. Clinical management: water immersion of affected limb to deny oxygen; meticulous removal of fragments with forceps under wet conditions (NOT dry, as fragments re-ignite); topical copper sulfate solution darkens fragments for identification (if available, but copper systemic toxicity limits use); after debridement, dressing with saline-soaked gauze. Burns are deep (3rd-4th degree common), resuscitation per Parkland; phosphorus systemic toxicity includes hepatic and renal injury — monitor LFTs, BUN/Cr, ECG (QT prolongation). Common scenarios: military munitions exposure (refugee/civilian casualty), industrial accident in match or fertilizer manufacture. Wartime use against civilian populations is contested under Convention on Certain Conventional Weapons. EmergencyNet Q9 + thermal burn workflow. Reference: PHMSA ERG 2024 Guide 136.",
+      "section": "Guide 136 - White Phosphorus",
+      "page": 156,
+      "tags": ["white_phosphorus", "UN1381", "flammable_solid", "deep_burn", "Parkland", "Q9_relevant", "military_munition"]
+    },
+    {
+      "id": "ERG2024-G123-AMMONIUM-NITRATE",
+      "text": "Ammonium nitrate (UN1942 / UN2067, Guide 140 oxidizer; pure undiluted technical grade per Guide 123 explosive risk) — fertilizer and oxidizer with documented detonation history under fire impingement, contamination with hydrocarbons, or shock. Reference incidents: Beirut 2020 (~2,750 tonnes, ~218 dead), Texas City 1947 (~600 dead), West TX 2013 (15 dead), Toulouse 2001 (31 dead). Initial isolation: large fire near storage requires 1-3 km exclusion immediately; tertiary blast injury patterns dominate at distance. PPE: turnout + SCBA for fire; Level A if release contains acid contamination (ANFO precursor). Critical operational decision: fire suppression vs evacuation — historical fires that transitioned to detonation gave 15-60 minutes warning, but no reliable predictor; modern doctrine favors evacuation over sustained suppression for storage >50 tonnes on fire. Clinical: blast lung, tympanic rupture, tertiary blunt trauma from being thrown, secondary penetrating from glass/debris, thermal burn at proximate distance, NOx pulmonary edema delayed. EmergencyNet Q12 mandatory escalation for any blast exposure. Reference: PHMSA ERG 2024 Guide 140.",
+      "section": "Guide 140 - Ammonium Nitrate",
+      "page": 160,
+      "tags": ["ammonium_nitrate", "AN", "oxidizer", "explosive", "Beirut", "Q12_relevant", "Q9_relevant", "tertiary_blast"]
+    },
+    {
+      "id": "ERG2024-G131-FLAMMABLE-GAS-NATURAL",
+      "text": "Natural gas (methane CH4, UN1971 LNG / UN1972 compressed, Guide 115) — pipeline, compressed cylinder, and LNG forms. Lighter than air — disperses upward, explosion hazard in enclosed structures (basements). PPE: SCBA + turnout for fire. Initial isolation: 100 m small leak / 800 m large fire. Clinical: simple asphyxiant — non-toxic but displaces oxygen in confined spaces; combustion products are CO + soot. Pipeline rupture incidents (San Bruno 2010 USA, Kaohsiung 2014 Taiwan) produce intense pool/jet fire with thermal injury and structural collapse from secondary failure. LNG transport (sea tanker, road tanker) carries potential for vapor cloud explosion if release contacts ignition source; LNG is cryogenic (-162°C) — direct contact causes cryogenic 'cold burn' similar to severe frostbite, requires gradual warming and analgesia. Confined-space gas ignition produces deflagration with structural damage typical of internal gas explosions (windows blown out, walls displaced outward) — distinguishes from external blast. EmergencyNet Q12 escalation for any internal explosion exposure. Reference: PHMSA ERG 2024 Guide 115.",
+      "section": "Guide 115 - Natural Gas / LNG",
+      "page": 130,
+      "tags": ["natural_gas", "methane", "LNG", "asphyxiant", "vapor_cloud", "Q12_relevant", "cryogenic", "deflagration"]
+    },
+    {
+      "id": "ERG2024-G127-OXYGEN-CRYOGENIC",
+      "text": "Liquid oxygen (UN1073, Guide 122) and compressed oxygen (UN1072) — cryogenic and pressurized oxidizer. Not flammable itself but accelerates combustion of flammables and incompatibles. PPE: cryogenic gloves + face shield for liquid; SCBA only if air is contaminated. Initial isolation: 100 m for large LO2 release. Clinical: cryogenic 'cold burn' from direct contact (analogous to deep frostbite); high-concentration oxygen (>40% atmospheric) accelerates fire ignition — small spark or static produces conflagration with materials normally non-flammable (e.g. leather, hair, nylon clothing). Hyperbaric over-oxygenation in damaged ventilator or oxygen-rich environment causes pulmonary toxicity (>1.6 ATA partial pressure for hours), CNS toxicity (seizure), absorption atelectasis. Common sources: hospital LOX supply tanks, industrial gas distribution, welding suppliers, rocket fuel manufacture. Major incidents: hospital oxygen-line fires during patient transfer with petroleum-based products (vaseline). EmergencyNet incident: oxygen-line failure in ICU/OR is rare but high-consequence — building evacuation indicated. Reference: PHMSA ERG 2024 Guide 122.",
+      "section": "Guide 122 - Liquid Oxygen",
+      "page": 140,
+      "tags": ["oxygen", "LOX", "UN1073", "cryogenic", "oxidizer", "fire_acceleration", "hospital_LOX"]
+    },
+    {
+      "id": "ERG2024-G118-FLUORINE-COMPOUNDS",
+      "text": "Fluorine (F2, UN1045) and hydrogen fluoride (HF, UN1052 anhydrous / UN1790 aqueous, Guide 125) — both extremely toxic. HF is unique: low concentrations (1-3% household rust remover) produce deep, painful burns 6-24h after exposure due to fluoride ion penetration; concentrated (>50%) HF causes immediate severe burn + systemic hypocalcemia + cardiac arrhythmia. PPE: SCBA + Level A for anhydrous HF or fluorine; Level B with butyl rubber for aqueous HF. Decontamination: water irrigation 15-20 min then calcium gluconate gel 2.5% topical (all dermal contact, regardless of size); IV calcium gluconate for systemic exposure or burn >5% TBSA; Bier block (regional IV calcium) for digital exposure. Cardiac monitoring mandatory — hypocalcemia + hyperkalemia produces refractory arrhythmia, death within hours possible from a small burn left untreated. Industrial sources: semiconductor etch, glass etching, fluoropolymer manufacture, pickling baths in steel mills. EmergencyNet Q1 (active bleeding) and dermal burn workflow with mandatory Q9 if inhalation. Reference: PHMSA ERG 2024 Guide 125.",
+      "section": "Guide 125 - Hydrogen Fluoride",
+      "page": 142,
+      "tags": ["hydrogen_fluoride", "HF", "UN1052", "calcium_gluconate", "hypocalcemia", "Q9_relevant", "level_a", "semiconductor"]
+    },
+    {
+      "id": "ERG2024-G133-TOXIC-PESTICIDE",
+      "text": "Pesticides — organophosphates (parathion UN2783, malathion UN3018, Guide 152), carbamates (carbaryl UN2757), pyrethroids (UN3349). Organophosphate exposure: SLUDGE syndrome (Salivation, Lacrimation, Urination, Defecation, GI cramps, Emesis) plus miosis, fasciculations, bradycardia, bronchospasm, seizure, respiratory arrest. PPE: Level B + chemical-resistant gloves; Level A for concentrated bulk spills. Antidote: atropine 2-6 mg IV titrated to drying of secretions (NOT to heart rate or pupil); 2-PAM (pralidoxime) 1-2 g IV given within minutes of exposure to reverse acetylcholinesterase aging — repeat every 4-6 hours; benzodiazepines for seizure (lorazepam, midazolam). Decontamination: clothing removal mandatory, copious soap-and-water wash. Carbamate similar but milder/shorter, no PAM needed. Pyrethroid: paresthesia, neurological irritation, generally less lethal but mass-exposure scenarios (sprayer truck rollover) common. Mass scenarios: agricultural worker accidental spray, suicide attempts (developing world endemic), nerve-agent terrorism (sarin / VX, mass civilian casualty). Reference: PHMSA ERG 2024 Guide 152.",
+      "section": "Guide 152 - Organophosphate Pesticides",
+      "page": 172,
+      "tags": ["organophosphate", "pesticide", "atropine", "pralidoxime", "SLUDGE", "Q9_relevant", "level_b", "decontamination"]
+    },
+    {
+      "id": "ERG2024-G166-RADIOACTIVE",
+      "text": "Radioactive materials (UN2912 LSA-I, UN3324 fissile, UN2978 uranium hexafluoride, Guide 161-166) — industrial isotopes (Co-60, Ir-192, Cs-137 medical/welding), nuclear medicine (Tc-99m, F-18), nuclear power, weapons-grade. PPE: standard PPE + dosimetry; Level A only for plutonium / uranium hexafluoride or wet release. Initial isolation depends on activity — refer to ERG Table 1 and dose-rate map at scene. Clinical: external exposure rarely contaminates — patient is not 'radioactive' to staff once decontaminated; internal contamination (inhaled, ingested, wound-deposited) is the persistent hazard. Whole-body external dose: 1-2 Gy GI prodrome 2-6h, 2-6 Gy bone marrow 7-14 days, >6 Gy GI/CNS rapid. Time-to-vomit is field triage proxy. Decontamination: clothing removal eliminates 90%+ contamination; warm-water shower for skin; bag/seal contaminated clothing as radwaste; dosimeter survey to confirm. Antidotes: Prussian blue for Cs-137, DTPA for transuranics, KI for I-131 (24h or earlier). Reference: PHMSA ERG 2024 Guide 162.",
+      "section": "Guide 162-166 - Radioactive Material",
+      "page": 192,
+      "tags": ["radioactive", "Cs-137", "Co-60", "I-131", "ARS", "Prussian_blue", "DTPA", "iodine", "Q9_relevant"]
+    },
+    {
+      "id": "ERG2024-G158-INFECTIOUS-MATERIAL",
+      "text": "Infectious substances (UN2814 Category A, UN3373 Category B, UN3291 medical waste, Guide 158) — research, hospital, veterinary transport. PPE: gown + gloves + N95 + face shield for routine; full Tyvek + powered respirator for Category A high-consequence (Ebola, Marburg, Lassa, Crimean-Congo HF, smallpox-eradication). Initial isolation: 25 m for spills containing Category A; smaller for Category B. Cleanup: 1:10 sodium hypochlorite (5,000 ppm) on visible material, dwell 10 min, water rinse, dispose contaminated absorbent as medical waste in red biohazard bag with proper UN3291 labeling. Patient triage in spill: actively infected vs decontaminated vs uncontaminated; patients with broken skin or mucous membrane exposure require immediate post-exposure evaluation and (for HIV) PEP. Common scenarios: research lab spill, hospital medical-waste transport accident, BSL-3 facility breach. EmergencyNet anomaly_detector RESP_CLUSTER + febrile pattern in geographic micro-cluster signals possible community-acquired airborne pathogen — different protocol from chemical RESP_CLUSTER. Reference: PHMSA ERG 2024 Guide 158.",
+      "section": "Guide 158 - Infectious Substances",
+      "page": 186,
+      "tags": ["infectious", "UN2814", "Category_A", "Ebola", "BSL-3", "biohazard", "PPE", "outbreak"]
+    },
+    {
+      "id": "ERG2024-G133-METHYLENE-CHLORIDE",
+      "text": "Methylene chloride (dichloromethane, UN1593, Guide 160) — industrial paint stripper, solvent, decaffeination. Volatile, dense vapor pools in low spaces. PPE: SCBA + Level B for vapor; nitrile-resistant gloves (rapid permeation). Clinical: CNS depression at >500 ppm acute; >1000 ppm produces unconsciousness; metabolized to CO endogenously, COHb rises 3-7% over 8h post-exposure (delayed). Confined-space fatalities common in tank-cleaning and vehicle paint-stripping with inadequate ventilation. Treatment: removal from exposure, high-flow O2 (treats both metabolic CO and direct CNS depression), supportive care; co-oximetry for COHb; long monitoring period 8h+ for delayed CO peak. EPA 2024 banned consumer paint-stripper containing methylene chloride after multiple consumer fatalities; industrial use continues with vapor monitoring. EmergencyNet Q8 (altered mental) + Q9 (inhalation) co-escalation for any significant exposure. Reference: PHMSA ERG 2024 Guide 160.",
+      "section": "Guide 160 - Methylene Chloride",
+      "page": 188,
+      "tags": ["methylene_chloride", "DCM", "UN1593", "delayed_CO", "Q8_relevant", "Q9_relevant", "level_b", "paint_stripper"]
+    },
+    {
+      "id": "ERG2024-G151-MERCURY",
+      "text": "Mercury (UN2809 elemental, UN1624 inorganic salt, Guide 172) — laboratory, industrial, healthcare (legacy thermometers, dental amalgam). Vapor more toxic than liquid contact for elemental form. PPE: Level B for spills; mercury vapor analyzer to monitor. Decontamination of liquid mercury: do NOT use vacuum (disperses droplets); use sulfur or zinc powder amalgamation kit; dispose as hazardous waste. Clinical: chronic exposure dominant in occupational scenarios (gold-mining artisanal, chlor-alkali plants) with neurological symptoms (tremor, erethism, peripheral neuropathy); acute high-dose ingestion (mercury battery, suicidal) produces hemorrhagic gastroenteritis. Methylmercury — unique pediatric and prenatal concern (Minamata 1956 Japan, Iraq 1971 grain-poisoning); biomagnifies in fish, exposure via diet. Treatment: removal from exposure, chelation with DMSA / DMPS / British Anti-Lewisite based on form and severity. EmergencyNet Q8 escalation for chronic encephalopathy presentation; Q9 for inhalation. Reference: PHMSA ERG 2024 Guide 172.",
+      "section": "Guide 172 - Mercury",
+      "page": 220,
+      "tags": ["mercury", "elemental", "methylmercury", "Minamata", "DMSA", "Q8_relevant", "Q9_relevant", "level_b"]
+    },
+    {
+      "id": "ERG2024-G172-ASBESTOS",
+      "text": "Asbestos (UN2212 amphibole / UN2590 chrysotile, Guide 171) — building demolition, fireproofing, brake-pad incidents. Hazard is chronic (mesothelioma, asbestosis, lung cancer 20-40 year latency); acute exposure during incident does not produce immediate symptoms. PPE: P100 respirator or PAPR; Tyvek coverall + booties + glove; full decon at exit. Initial isolation: not typically required for normal release; 25 m perimeter for large cleanup operations. EmergencyNet relevance: post-disaster building collapse releases asbestos from older structures (pre-1980s commercial, pre-1990s residential in many jurisdictions); USAR teams entering rubble require P100 respirator; long-term registry of exposed responders is standard (9/11 World Trade Center example, 2,000+ cancer cases attributed to dust exposure). Acute respiratory complaint in rubble-pile exposure is more likely silica or generic dust irritation than asbestos-specific. Patient education: document exposure for future cancer-screening surveillance, cohort registry. Reference: PHMSA ERG 2024 Guide 171.",
+      "section": "Guide 171 - Asbestos",
+      "page": 218,
+      "tags": ["asbestos", "amphibole", "chrysotile", "P100", "USAR", "9-11", "long_term_surveillance"]
+    },
+    {
+      "id": "ERG2024-G130-OIL-SPILL-MARINE",
+      "text": "Crude oil (UN1267, Guide 128) and refined products (UN1203 gasoline, UN1202 diesel, UN3082 environmentally hazardous mixture) — marine and pipeline spill response. Direct human casualty primarily from fire and confined-space inhalation; environmental and economic impact dominant in marine spill. PPE: standard PPE + nitrile or PVC gloves + boots; SCBA for fire response. Major incidents: Exxon Valdez 1989, Deepwater Horizon 2010 (11 dead in initial blowout), Sanchi tanker 2018 (32 dead in collision and fire). Clinical exposure scenarios: tar/oil dermal contamination of beached responders or wildlife handlers (defatting dermatitis, acne-form rash); inhalation of volatile light hydrocarbons (BTEX — benzene, toluene, ethylbenzene, xylene) during cleanup with respiratory irritation, headache, nausea; chronic benzene exposure leukemia risk. Treatment: removal from exposure, dermal decontamination with mild soap + warm water (NOT solvents — increase absorption), supportive care. EmergencyNet zone-based exclusion not typically needed for marine spill; cleanup-worker health surveillance is the main MCI dimension. Reference: PHMSA ERG 2024 Guide 128.",
+      "section": "Guide 128 - Marine Oil Spill",
+      "page": 148,
+      "tags": ["oil_spill", "crude_oil", "BTEX", "Exxon_Valdez", "Deepwater_Horizon", "level_b", "marine"]
+    },
+    {
+      "id": "ERG2024-G155-CHEMICAL-WARFARE",
+      "text": "Chemical warfare agents (CWAs) — nerve (sarin GB, VX, novichok), blister (mustard HD, lewisite L), choking (phosgene CG, chlorine), blood (hydrogen cyanide AC, cyanogen chloride CK). Per ERG and CDC CHEMM resources. PPE: Level A with M40 / equivalent military-grade respirator + butyl rubber suit. Initial isolation: 800 m+ for unknown CWA. Clinical recognition: nerve agent SLUDGE + miosis + fasciculation + seizure (treatment same as organophosphate pesticide — atropine + pralidoxime + benzo); mustard latent burn 2-12h post-exposure with vesication and conjunctivitis (no antidote — supportive); blood agent hydrogen cyanide (treatment hydroxocobalamin 5g IV, sodium thiosulfate, amyl nitrite); choking agent phosgene (delayed pulmonary edema 6-72h, supportive). Reference incidents: Tokyo subway sarin 1995, Halabja 1988 mustard + nerve, Syria Ghouta 2013 sarin, Salisbury 2018 novichok, Khan Sheikhoun 2017 sarin. EmergencyNet anomaly_detector + RESP_CLUSTER + neurological cluster signals nerve-agent suspicion. Reference: PHMSA ERG 2024 + CDC CHEMM.",
+      "section": "Guide 152-155 - Chemical Warfare Agents",
+      "page": 172,
+      "tags": ["chemical_warfare", "sarin", "VX", "mustard", "cyanide", "novichok", "level_a", "Q9_relevant", "atropine"]
+    },
+    {
+      "id": "ERG2024-G140-OXIDIZER",
+      "text": "Oxidizers (UN1942 ammonium nitrate, UN1479 generic oxidizer Class 5.1, Guide 140) — fertilizer, swimming-pool chemicals, fireworks precursor, perchlorates. Hazard: enhanced combustion of normally-mild flammables; oxidizer + fuel mixture = explosive hazard. PPE: turnout + SCBA for fire; Level B for unburned material. Initial isolation: 50-300 m depending on volume. Decomposition products of nitrate-class oxidizers in fire: NOx (nitric oxide and nitrogen dioxide) — toxic and produces delayed pulmonary edema 6-24h post-exposure (treatment same as phosgene: corticosteroid early, supportive). Common scenarios: fertilizer warehouse fire (Beirut 2020, West TX 2013), swimming-pool chemical mixing in residential setting (calcium hypochlorite + organic), pyrotechnic facility incident. EmergencyNet Q9 mandatory for any nitrate-decomposition smoke exposure; Q12 for blast exposure if detonation occurs. Reference: PHMSA ERG 2024 Guide 140.",
+      "section": "Guide 140 - Oxidizers",
+      "page": 160,
+      "tags": ["oxidizer", "ammonium_nitrate", "perchlorate", "NOx", "Q9_relevant", "Q12_relevant", "level_b"]
+    },
+    {
+      "id": "ERG2024-G123-PEROXIDE",
+      "text": "Organic peroxides (UN3101-UN3120, Guide 145, 146, 148) — industrial polymerization initiators, hair-care products, explosive precursors. Sensitive to heat, shock, contamination — can self-accelerate to explosion at temperatures only 5-10°C above ambient (SADT, Self-Accelerating Decomposition Temperature). PPE: turnout + SCBA + face shield. Initial isolation: 100 m for fire; 300 m for confirmed peroxide on fire (decomposition + explosive risk). Common scenarios: industrial polymerization plant fire, illegal triacetone triperoxide (TATP) manufacture (improvised explosive). Clinical: thermal burn from fire, blast injury if detonation, dermal/ocular irritation from organic peroxide solutions. Decomposition products vary by formulation — methyl ethyl ketone peroxide produces MEK, formic acid, carbon dioxide; benzoyl peroxide produces benzene, biphenyl, CO2. EmergencyNet Q9 + Q12 mandatory for incident exposure. Storage protocols (refrigeration, dilution, separation from incompatibles) are primary risk reduction; loss-of-cooling at industrial site is precipitating event for most reported incidents. Reference: PHMSA ERG 2024 Guide 145.",
+      "section": "Guide 145 - Organic Peroxide",
+      "page": 162,
+      "tags": ["organic_peroxide", "TATP", "SADT", "polymerization", "Q9_relevant", "Q12_relevant", "level_b"]
+    }
+  ]
+}

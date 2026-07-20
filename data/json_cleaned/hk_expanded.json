@@ -1,0 +1,27 @@
+{
+  "source": "HK_DETAILED_PROTOCOLS",
+  "collection": "command",
+  "chunks": [
+    {
+      "id": "HK-HIGH-RISE-VERTICAL-EVACUATION",
+      "text": "Hong Kong's vertical density (>40-storey residential and commercial towers across Kowloon and Hong Kong Island) drives unique high-rise MCI doctrine refined by the Garley Building fire (1996, 41 dead, 81 injured), Cordis Hotel COVID-19 quarantine evacuation, and the 2008 Mong Kok bedspace apartment fires. Operational features: (1) firefighter elevators (where present per Buildings Department code) provide controlled vertical access to fire floor + 2 floors below for resource staging; non-protected elevators are recalled to ground floor and disabled; (2) stairwell pressurization (Class A staircase, smoke-protected) is the primary evacuation route — if pressurization fails, stairwells fill with smoke from fire-floor doors and become death traps within minutes (Garley); (3) refuge floors (every 25 storeys per code, Hong Kong post-1996) provide horizontal evacuation to fire-protected zone with fresh-air ventilation; mass casualties accumulate at refuge floors awaiting helicopter or stairwell extraction; (4) helicopter rooftop rescue limited by HK weather, building helipad availability (only on select super-tall structures), and Government Flying Service capacity; (5) victim triage in vertical context: limited rescue capacity per stairwell descent → triage at refuge floor, RED first to ground, BLACK marked but left for second wave with cooling/hydration support if possible. EmergencyNet relevance: GeoFence polygons can extend in 3D for high-rise — z-coordinate of triage tag, with refuge-floor staging as virtual zones.",
+      "section": "Hong Kong High-Rise Vertical Evacuation",
+      "page": 1,
+      "tags": ["Hong_Kong", "high_rise", "vertical_evacuation", "Garley", "refuge_floor", "stairwell_pressurization", "helicopter_rooftop"]
+    },
+    {
+      "id": "HK-SARS-2003-INFECTION-CONTROL",
+      "text": "The 2003 SARS-CoV-1 outbreak in Hong Kong (1,755 cases, 299 deaths, including 8 healthcare workers killed at the Prince of Wales Hospital and Amoy Gardens cluster of 329 cases linked to a single faulty drainage stack) reshaped HK and global hospital infection control doctrine. Operational lessons: (1) early case definition was inadequate — fever + travel from southern China only; modern definition adds occupational exposure, household contact, and respiratory cluster epidemiology; (2) airborne precautions for aerosol-generating procedures (intubation, NIV, nebulization) require N95 + face shield + gown + double glove minimum, with negative-pressure isolation room — a standard now hard-coded into HK Hospital Authority isolation ward design; (3) Amoy Gardens super-spreading event traced to U-trap drying out + ventilation creating viral aerosol back-flow through plumbing — drove HK Buildings Department reform of high-rise sanitary stack design; (4) contact tracing scaled to citywide via Hospital Authority + Department of Health partnership — manual tracing exhausted within first week, leading to electronic case management adoption; (5) PPE supply chain — SARS depleted regional N95 reserves in 2 weeks; HK Government strategic reserve for respiratory pandemic equipment dates to 2003 lessons. Relevance: anomaly_detector RESP_CLUSTER + febrile signature in geographic micro-cluster (single building / floor) signals possible airborne pathogen — different protocol than chemical RESP_CLUSTER.",
+      "section": "Hong Kong SARS 2003 Infection Control",
+      "page": 1,
+      "tags": ["Hong_Kong", "SARS", "infection_control", "Amoy_Gardens", "airborne_precautions", "N95", "negative_pressure", "outbreak"]
+    },
+    {
+      "id": "HK-PRC-CROSS-BORDER-COORDINATION",
+      "text": "Hong Kong-Mainland China cross-border emergency coordination has unique operational complexity due to dual jurisdictions, customs / immigration controls, and protocol divergence between HK Hospital Authority (Western medicine standards) and PRC provincial health systems (mixed Western + traditional Chinese medicine, varying regional capacity). Operational features: (1) Hong Kong Government Flying Service (GFS) provides cross-border medevac to Shenzhen, Guangzhou, Zhuhai under bilateral arrangement — typically for HK residents injured in PRC requiring HK-standard care, or PRC patients accepted by HK hospitals; pre-cleared list of receiving hospitals avoids ad-hoc immigration negotiation; (2) Lo Wu / Lok Ma Chau / Shenzhen Bay border-crossing field ambulance hand-off is documented protocol — HK ambulance hands patient to PRC ambulance at customs zone with English/Mandarin/Cantonese clinical hand-off sheet; (3) joint exercises (Ground-zero exercises 2018, post-Wenchuan-2008 cross-border drills) identified language barriers, drug formulary differences (some HK drugs unavailable in PRC; some PRC drugs not approved in HK), and unit/measurement differences (mg/dL vs mmol/L) as operational risks; (4) Greater Bay Area integration since 2017 has expanded mutual aid framework — PRC USAR teams and HK GFS work bilaterally for typhoon Hato 2017 (Macau impact), Wenchuan 2008. Relevance: EmergencyNet multilingual support (zh-tw + zh-cn + en + Cantonese) directly addresses HK-PRC cross-border triage hand-off scenario.",
+      "section": "Hong Kong PRC Cross-Border Coordination",
+      "page": 1,
+      "tags": ["Hong_Kong", "China", "PRC", "cross_border", "Greater_Bay_Area", "GFS", "Lo_Wu", "multilingual", "drug_formulary"]
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+# EmergencyNet — Field (7860) + Base (7861)
+#
+# Usage (PowerShell, from this directory):
+#   docker compose up --build
+#   # Field: http://localhost:7860
+#   # Base:  http://localhost:7861
+#
+# Optional AI (create .env next to this file, never commit keys):
+#   DASHSCOPE_API_KEY=sk-...
+#   QWEN_BASE_URL=https://dashscope-intl.aliyuncs.com/compatible-mode/v1
+
+services:
+  field:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: emergencynet:v5
+    container_name: emergencynet-field
+    ports:
+      - "7860:7860"
+    environment:
+      PYTHONPATH: /app
+      FIELD_GRADIO_HOST: "0.0.0.0"
+      FIELD_GRADIO_PORT: "7860"
+      DASHSCOPE_API_KEY: ${DASHSCOPE_API_KEY:-}
+      QWEN_API_KEY: ${QWEN_API_KEY:-}
+      QWEN_BASE_URL: ${QWEN_BASE_URL:-https://dashscope-intl.aliyuncs.com/compatible-mode/v1}
+      QWEN_MODEL_FIELD: ${QWEN_MODEL_FIELD:-qwen3.7-plus}
+      QWEN_MODEL_VISION: ${QWEN_MODEL_VISION:-qwen3.7-plus}
+      QWEN_TIMEOUT_SEC: ${QWEN_TIMEOUT_SEC:-60}
+    command: ["python", "-m", "emergencynet.gradio_app"]
+    restart: unless-stopped
+
+  base:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: emergencynet:v5
+    container_name: emergencynet-base
+    ports:
+      - "7861:7861"
+    environment:
+      PYTHONPATH: /app
+      BASE_GRADIO_HOST: "0.0.0.0"
+      BASE_GRADIO_PORT: "7861"
+      DASHSCOPE_API_KEY: ${DASHSCOPE_API_KEY:-}
+      QWEN_API_KEY: ${QWEN_API_KEY:-}
+      QWEN_BASE_URL: ${QWEN_BASE_URL:-https://dashscope-intl.aliyuncs.com/compatible-mode/v1}
+      QWEN_MODEL_STRATEGY: ${QWEN_MODEL_STRATEGY:-qwen3.7-max}
+      QWEN_MODEL_AGENT: ${QWEN_MODEL_AGENT:-qwen3.7-plus}
+      QWEN_AGENT_MAX_STEPS: ${QWEN_AGENT_MAX_STEPS:-6}
+      QWEN_TIMEOUT_SEC: ${QWEN_TIMEOUT_SEC:-60}
+      GATEWAY_PATIENT_CAP: ${GATEWAY_PATIENT_CAP:-500}
+    command: ["python", "-m", "emergencynet.base_dashboard"]
+    restart: unless-stopped
+    # Field and base are independent HTTP UIs; no service dependency required.
+    # Software e2e: encode hex on Field → paste into Base "Inject test packet".

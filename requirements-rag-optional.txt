@@ -1,0 +1,5 @@
+# Optional dependencies for the deprecated, non-runtime strategy_rag module.
+# They are intentionally excluded from normal and Termux installations.
+chromadb>=0.5
+sentence-transformers>=2.7
+pypdf>=4.0

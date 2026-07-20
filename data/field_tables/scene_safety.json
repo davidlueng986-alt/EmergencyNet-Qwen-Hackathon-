@@ -1,0 +1,102 @@
+{
+  "_meta": {
+    "version": "0.1",
+    "filename": "scene_safety.json",
+    "purpose": "Scene safety directives keyed by environment dropdown selection. Field AI's safety_note.ppe must be a SUPERSET of the matched entry's ppe (add only, never remove). safety_note.perimeter_m must be >= matched perimeter_m (increase only).",
+    "content_provenance": "AI-generated content aligned with ERG 2024 isolation distances, OSHA HAZWOPER 1910.120 PPE Level definitions, and INSARAG operational safety guidance. NOT a substitute for actual HazMat / USAR team scene assessment.",
+    "ref_categories_used": [
+      "ERG 2024 — Emergency Response Guidebook (PHMSA, public domain, https://www.phmsa.dot.gov/hazmat/erg/emergency-response-guidebook-erg)",
+      "OSHA HAZWOPER 1910.120 — PPE Level A/B/C/D definitions (public domain)",
+      "INSARAG Methodology — USAR scene safety (UN OCHA, public)",
+      "NFPA 1500 — Firefighter PPE",
+      "CDC Blast Injury Primer (public)"
+    ],
+    "ppe_level_quick_reference": {
+      "Level A": "Fully encapsulating chemical-resistant suit + SCBA. Highest protection. Unknown high-concentration vapor.",
+      "Level B": "SCBA + chemical-resistant suit (not encapsulating). High respiratory but lesser skin. Known agent, vapor present.",
+      "Level C": "Air-purifying respirator (APR) + chemical-resistant clothing. Known agent, concentration measured, APR appropriate.",
+      "Level D": "Standard work uniform + safety glasses + gloves + helmet. No respiratory hazard."
+    }
+  },
+
+  "entries": {
+
+    "clear": {
+      "ppe": ["Helmet", "eye protection", "gloves", "high-visibility vest"],
+      "perimeter_m": 10,
+      "directive": "Standard scene safety. Maintain awareness of vehicle traffic and bystanders. Establish working perimeter with cones or tape if available.",
+      "ref_category": "PHTLS 10th Scene Size-Up"
+    },
+
+    "structural_collapse_active": {
+      "ppe": ["Helmet", "eye protection", "gloves", "N95 or better dust mask", "steel-toe / heavy boots"],
+      "perimeter_m": 50,
+      "directive": "DO NOT enter active collapse zone. Treat at perimeter. Listen for warning sounds (shifting, dust falls). Wait for USAR / heavy rescue clearance before crossing collapse line. Marker patient locations from outside.",
+      "ref_category": "INSARAG Operational + NFPA 1006"
+    },
+
+    "structural_collapse_stabilized": {
+      "ppe": ["Helmet", "eye protection", "gloves", "N95 dust mask", "steel-toe boots"],
+      "perimeter_m": 30,
+      "directive": "Operate within stabilized footprint marked by USAR. Listen for shifting debris. Have a designated escape route. Stand by to withdraw if structure shifts. Two-rescuer minimum.",
+      "ref_category": "INSARAG + NFPA 1006"
+    },
+
+    "fire_active": {
+      "ppe": ["Turnout gear or equivalent fire-resistant clothing", "helmet", "eye protection", "gloves", "respiratory protection (SCBA preferred)"],
+      "perimeter_m": 50,
+      "directive": "Do not enter fire zone without trained fire suppression personnel. Treat upwind / uphill of fire. Watch for radiant heat injury and CO/cyanide exposure even outside flame zone. Beware of compromised structures.",
+      "ref_category": "NFPA 1500 + WHO Burns Field Care"
+    },
+
+    "chemical_suspected": {
+      "ppe": ["Level C minimum: APR with appropriate cartridge + chemical-resistant suit"],
+      "perimeter_m": 100,
+      "directive": "STOP CARE if not in appropriate PPE. Retreat upwind, uphill. Await HazMat team with atmospheric monitoring. ALL responders + patients require decontamination before further treatment. Do not eat / drink / smoke in suspected zone.",
+      "ref_category": "ERG 2024 General Guidance + OSHA HAZWOPER"
+    },
+
+    "chemical_known_chlorine": {
+      "ppe": ["Level B: SCBA mandatory + chemical-resistant suit"],
+      "perimeter_m": 200,
+      "directive": "Chlorine: dense gas, settles in low areas. Move to high ground upwind. Patients with respiratory symptoms — high-flow O2 only, do not intubate prophylactically (laryngospasm risk). Decon: water rinse + soap. Watch responders for symptom onset.",
+      "ref_category": "ERG 2024 Guide 124 + CDC Chlorine Fact Sheet"
+    },
+
+    "chemical_known_ammonia": {
+      "ppe": ["Level B: SCBA mandatory + chemical-resistant suit"],
+      "perimeter_m": 150,
+      "directive": "Ammonia: lighter than air but condenses in moisture. Severe eye + respiratory irritant. Decon with copious water for eyes (15+ min). Patients with airway symptoms — high-flow O2, watch for delayed pulmonary edema.",
+      "ref_category": "ERG 2024 Guide 125 + CDC Ammonia Fact Sheet"
+    },
+
+    "chemical_known_hydrogen_sulfide": {
+      "ppe": ["Level A: fully encapsulating + SCBA (immediately dangerous to life and health)"],
+      "perimeter_m": 300,
+      "directive": "H2S: dense, settles in low areas. Smell paralysis at low concentrations — sense of smell unreliable. Loss of consciousness on first breath at high concentration. Multiple-casualty incident with sudden collapse pattern suggests H2S. Withdraw if any responder reports headache / nausea.",
+      "ref_category": "ERG 2024 Guide 117 + NIOSH H2S Pocket Guide"
+    },
+
+    "chemical_known_carbon_monoxide": {
+      "ppe": ["Level B: SCBA mandatory + standard clothing"],
+      "perimeter_m": 50,
+      "directive": "CO is odorless, colorless. Confined spaces especially dangerous. Multiple casualties from same enclosed space strongly suggests CO. High-flow O2 (100%) for all suspected exposure. Pulse oximetry UNRELIABLE in CO poisoning (use SpCO if available).",
+      "ref_category": "CDC CO Fact Sheet + AHA Toxicology"
+    },
+
+    "flood": {
+      "ppe": ["Personal flotation device", "helmet", "eye protection", "drysuit if cold water"],
+      "perimeter_m": 30,
+      "directive": "Water rescue is high-risk for rescuers. Throw / reach / row / go — go is last resort with trained water rescue personnel only. Watch for hidden submerged hazards (open manholes, debris, downed power lines). Decontaminate after exposure to flood water (sewage, chemicals).",
+      "ref_category": "FEMA Water Rescue + USCG SAR Manual"
+    },
+
+    "dark_low_visibility": {
+      "ppe": ["Helmet with light", "high-visibility vest", "headlamp + backup light", "gloves", "eye protection"],
+      "perimeter_m": 15,
+      "directive": "Maintain visual contact with team. Use buddy system. Mark entry / exit path with chem-lights or reflective markers. Vehicle accident scenes — set out triangles / flares well upstream of working area.",
+      "ref_category": "PHTLS 10th Night Operations + NIOSH Confined Space"
+    }
+
+  }
+}

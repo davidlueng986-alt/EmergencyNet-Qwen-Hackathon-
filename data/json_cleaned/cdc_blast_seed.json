@@ -1,0 +1,97 @@
+{
+  "source": "CDC_BLAST",
+  "collection": "hazmat",
+  "chunks": [
+    {
+      "id": "CDC-BLAST-PRIMARY-OVERVIEW",
+      "text": "Primary blast injury results from the direct effect of the overpressure shock wave on gas-containing organs: lungs (blast lung), middle ear (tympanic rupture), GI tract (bowel perforation), and CNS (concussion without external trauma). Severity scales with peak overpressure and duration; close-range and confined-space blasts disproportionately produce primary injury vs open-air. Tympanic membrane rupture is the most common primary blast finding (~50% of close-range survivors) but is not a reliable predictor of severe internal injury — patients with intact eardrums may still have blast lung. Triage doctrine: any patient within 5 m of detonation, in a confined space at any distance, or with documented loss of consciousness — observe minimum 6 hours for blast lung development with serial vital signs and SpO2 monitoring. Imaging: CXR within 1 hour, chest CT if suspicion remains. Reference: CDC Blast Injury Primer, primary phase.",
+      "section": "Primary Blast Phase",
+      "page": 1,
+      "tags": ["primary_blast", "blast_lung", "tympanic_rupture", "Q12_relevant", "overpressure", "CDC_blast"]
+    },
+    {
+      "id": "CDC-BLAST-LUNG",
+      "text": "Blast lung is the leading cause of death among initial blast survivors. Pathophysiology: shock-wave-induced alveolar disruption produces hemorrhage, pulmonary edema, and air emboli — the latter explains sudden cardiac arrest hours after seemingly stable presentation. Clinical: dyspnea, hypoxia, cough, hemoptysis, decreased breath sounds, tachypnea; CXR shows 'butterfly' bilateral infiltrate centered on hila. Management: high-flow oxygen, head-up positioning, judicious fluid resuscitation (over-resuscitation worsens pulmonary edema), early mechanical ventilation if needed — but avoid high PEEP and high tidal volume (worsens injury); permissive hypercapnia, low-tidal-volume strategy. Air embolism: trendelenburg + left lateral position; hyperbaric oxygen if available. Onset latency: typically within 4 hours but documented delayed presentations to 24-48 hours. EmergencyNet Q12 (close blast) escalation triggers mandatory blast lung observation regardless of initial appearance. Reference: CDC Blast Injury Primer, blast lung section.",
+      "section": "Blast Lung",
+      "page": 2,
+      "tags": ["blast_lung", "primary_blast", "pulmonary_edema", "air_embolism", "Q12_relevant", "low_tidal_volume", "CDC_blast"]
+    },
+    {
+      "id": "CDC-BLAST-TYMPANIC-RUPTURE",
+      "text": "Tympanic membrane rupture is the most common primary blast injury and serves as a sentinel sign of close-range or confined-space exposure. Clinical: hearing loss, tinnitus, otorrhagia, vertigo, otalgia. Physical examination with otoscopy confirms perforation; size of perforation correlates with overpressure but not reliably with internal injury severity. Management: dry ear precautions (no irrigation, no eye drops, no swimming), oral analgesia, ENT referral within 1-2 weeks for evaluation; most perforations heal spontaneously over 3-6 months. The critical implication is workup: TM rupture mandates evaluation for occult abdominal injury, blast lung, and traumatic brain injury — the patient was close enough for primary blast. EmergencyNet Q12 escalation is triggered by tympanic rupture even in the absence of other findings. Loud-sound exposure (concert, gunfire) without overpressure can also cause TM rupture; correlation with mechanism is essential. Reference: CDC Blast Injury Primer, tympanic injury.",
+      "section": "Tympanic Membrane Rupture",
+      "page": 3,
+      "tags": ["tympanic_rupture", "primary_blast", "Q12_relevant", "ENT", "occult_injury", "CDC_blast"]
+    },
+    {
+      "id": "CDC-BLAST-ABDOMINAL",
+      "text": "Primary blast injury to the abdomen produces bowel hemorrhage, mesenteric tear, and bowel perforation — the latter may have delayed presentation hours-to-days post-incident. Clinical: abdominal pain (often persistent and progressive), tenderness, rigidity, distension; bowel sounds may be absent or hyperactive; rectal exam for blood. Imaging: FAST or formal ultrasound for free fluid; CT abdomen with IV contrast for perforation, mesenteric tear, solid-organ injury. Surgical evaluation mandatory for any patient with suspected primary abdominal blast injury. The challenge: occult retroperitoneal hemorrhage (kidney, duodenum, pancreas) may not be apparent on initial exam, requires serial assessment. EmergencyNet Q6 (distended/rigid abdomen → occult internal hemorrhage) and Q12 (close blast) co-escalate when applicable; serial vital signs over 6+ hours minimum. Reference: CDC Blast Injury Primer, abdominal injury.",
+      "section": "Abdominal Blast Injury",
+      "page": 4,
+      "tags": ["abdominal_blast", "primary_blast", "bowel_perforation", "Q6_relevant", "Q12_relevant", "FAST", "CDC_blast"]
+    },
+    {
+      "id": "CDC-BLAST-SECONDARY-FRAGMENT",
+      "text": "Secondary blast injuries result from fragments propelled by the explosive force — bomb shrapnel (designed: nails, ball-bearings, screws — 'shrapnel'; environmental: glass, debris, vehicle parts). Clinical: penetrating wounds, embedded foreign bodies, lacerations, vascular injury, organ penetration. Management: hemorrhage control (tourniquet for extremity, direct pressure, junctional pressure devices, hemostatic dressing), wound exploration in OR for deep penetration, imaging for embedded fragments and trajectory mapping. Tetanus immunization status and antibiotic prophylaxis (cefazolin or equivalent) for contaminated wounds. EmergencyNet Q1 (active bleeding) is the dominant escalator for secondary blast; tourniquet placement is the highest-impact field intervention. The Manchester Arena 2017 attack (TATP-based device with metal pieces) and Boston Marathon 2013 attack (pressure-cooker bomb with shrapnel) are reference scenarios for civilian secondary-blast MCI. Reference: CDC Blast Injury Primer, secondary phase.",
+      "section": "Secondary Blast Phase",
+      "page": 5,
+      "tags": ["secondary_blast", "shrapnel", "penetrating_wound", "tourniquet", "Q1_relevant", "Manchester", "Boston_Marathon", "CDC_blast"]
+    },
+    {
+      "id": "CDC-BLAST-TERTIARY-DISPLACEMENT",
+      "text": "Tertiary blast injuries result from the patient being displaced by the blast wave and impacting structures or the ground. Clinical: blunt trauma — head injury (concussion to severe TBI), spinal injury, blunt thoracic and abdominal trauma, fractures (especially long bones and spine), crush injury if pinned by debris. Management: standard ATLS approach, with elevated suspicion for injuries that may be subtle or delayed (TBI, spinal cord injury without radiographic abnormality in pediatric SCIWORA, occult solid-organ injury). C-spine immobilization for head/neck injury suspicion. The mechanism of injury must be carefully documented: tertiary blast adds blunt trauma on top of primary blast injury, so a patient may be polytrauma in ways not visible at presentation. EmergencyNet Q5 (entrapment >30 min) and Q11 (elderly head injury with confusion) are common co-escalators with tertiary blast. Reference: CDC Blast Injury Primer, tertiary phase.",
+      "section": "Tertiary Blast Phase",
+      "page": 6,
+      "tags": ["tertiary_blast", "blunt_trauma", "TBI", "displacement", "Q5_relevant", "Q11_relevant", "ATLS", "CDC_blast"]
+    },
+    {
+      "id": "CDC-BLAST-QUATERNARY-OTHER",
+      "text": "Quaternary blast injuries comprise all other blast-related injuries not in the primary, secondary, or tertiary categories: thermal burns, smoke inhalation, exacerbation of pre-existing conditions, psychological trauma, exposure to chemical or radiological dispersal devices ('dirty bomb'). Quaternary injuries are heterogeneous and easily overlooked — patient with seemingly minor abrasions and burns may have severe smoke inhalation underlying. Specific concerns: thermal burn evaluation by Lund-Browder for accurate TBSA in mixed pediatric/adult casualties; CO and HCN co-exposure in confined-space blast (smoke combustion of synthetic materials), empirical hydroxocobalamin if shock or lactate >8; mental health surge in survivors and witnesses (acute stress reaction at scene, PTSD risk over weeks-months). Reference: CDC Blast Injury Primer, quaternary phase.",
+      "section": "Quaternary Blast Phase",
+      "page": 7,
+      "tags": ["quaternary_blast", "thermal_burn", "smoke_inhalation", "PTSD", "dirty_bomb", "Q9_relevant", "CDC_blast"]
+    },
+    {
+      "id": "CDC-BLAST-MASS-CASUALTY-TRIAGE",
+      "text": "Mass-casualty triage at blast scenes diverges from standard MCI in several critical respects: (1) primary blast injury (especially blast lung) may not manifest at initial triage — patients triaged GREEN at scene have died in transit; serial reassessment essential; (2) tympanic rupture is the field marker for close-range exposure and prompts elevated workup; (3) tourniquet for extremity hemorrhage is the highest-impact field intervention — bystander 'Stop the Bleed' training (American College of Surgeons campaign post-Sandy Hook) saves lives at extremity-injured blast scenes; (4) scene safety: secondary device search before deep entry, CBRN screening for chemical/radiological dispersal, structural collapse risk; (5) hospital surge: blast trauma overwhelms surgical capacity disproportionately to patient count — ratio of OR slots to RED tags is the binding constraint. EmergencyNet anomaly_detector RED_SURGE in the context of blast incident triggers immediate surge alert via Meshtastic broadcast. Reference: CDC Blast Injury Primer + ATLS 11th + PHTLS 10th.",
+      "section": "Blast MCI Triage Doctrine",
+      "page": 8,
+      "tags": ["blast_MCI", "triage", "Stop_the_Bleed", "tourniquet", "secondary_device", "Q1_relevant", "Q12_relevant", "CDC_blast"]
+    },
+    {
+      "id": "CDC-BLAST-CRUSH-SYNDROME",
+      "text": "Crush syndrome — a frequent complication of structural collapse blast scenes (Beirut 2020, Türkiye 2023, Mexico City 2017) — develops when a limb or torso is compressed for >30-60 minutes; release of compression triggers reperfusion injury with hyperkalemia, myoglobinuria, acute kidney injury, and metabolic acidosis. Field management: pre-extrication IV crystalloid (3-6 L isotonic) to dilute toxin load before release; bicarbonate to alkalize urine target pH >6.5; monitor potassium with point-of-care testing if available. Cardiac arrhythmia from hyperkalemia is the immediate post-extraction risk — calcium gluconate 1g IV, insulin/glucose, beta-agonist nebulizer, dialysis. Continuous renal replacement therapy may be required for established AKI. Reference incidents that codified pre-extraction fluid: 1988 Armenia earthquake, 1999 Marmara Turkey, 2010 Haiti, 2023 Türkiye-Syria. EmergencyNet Q5 (entrapment >30 min) is the primary screening question for this risk. Reference: CDC Blast Injury Primer + ATLS 11th.",
+      "section": "Crush Syndrome",
+      "page": 9,
+      "tags": ["crush_syndrome", "rhabdomyolysis", "hyperkalemia", "AKI", "Q5_relevant", "pre_extrication", "CDC_blast"]
+    },
+    {
+      "id": "CDC-BLAST-CONFINED-SPACE",
+      "text": "Confined-space blasts (subway, bus, building interior, ship hold) produce disproportionately severe primary blast injury because the overpressure wave is reflected and amplified by surrounding surfaces, sustaining elevated pressure for longer than open-air detonation of equivalent yield. Reference incidents: Tokyo subway sarin 1995 (chemical, not blast — but confined-space dynamics relevant); London 7/7 2005 underground bombings (primary blast injuries in confined-space tube cars); Madrid Atocha 2004; Manchester Arena 2017 foyer attack. Clinical implication: any patient from a confined-space blast — even one with minimal external injury — requires admission for blast-lung observation, abdominal evaluation, and TBI screening. Survivor density is also higher than open-air blast: survivors are not disproportionately ejected from blast field. Operational implication: confined-space blast triage assumes higher-acuity ratio (more RED) than open-air mass casualty. EmergencyNet Q12 (close blast) auto-escalation for confined-space blast scene. Reference: CDC Blast Injury Primer + UK NHS England Major Incident Plan.",
+      "section": "Confined-Space Blast",
+      "page": 10,
+      "tags": ["confined_space_blast", "subway", "tube", "London_7_7", "Manchester", "Q12_relevant", "primary_blast", "CDC_blast"]
+    },
+    {
+      "id": "CDC-BLAST-PEDIATRIC",
+      "text": "Pediatric blast casualties differ from adults in several dimensions important for triage and management: (1) higher surface-area-to-volume ratio amplifies thermal injury and fluid loss in burns; (2) more pliable thorax transmits blast force to internal organs more efficiently — relatively higher rate of blast lung and abdominal injury; (3) larger head relative to body produces higher rate of TBI in tertiary blast displacement; (4) JumpSTART pediatric triage replaces RPM-only START criteria — uses age-adjusted respiratory rate (15-45/min normal vs adult 10-30), positioning of airway opening for unconscious child (5 rescue breaths before declaring black tag); (5) family separation is psychological emergency requiring rapid reunification protocols. Children at concert/festival venues (Manchester Arena 2017, Las Vegas 2017) form a substantial proportion of victims. EmergencyNet Q11 (elderly head impact + confusion) does NOT apply to pediatric; pediatric mental status assessment uses age-appropriate scales. Reference: CDC Blast Injury Primer + JumpSTART triage.",
+      "section": "Pediatric Blast Casualties",
+      "page": 11,
+      "tags": ["pediatric_blast", "JumpSTART", "blast_lung", "TBI", "family_reunification", "Q12_relevant", "CDC_blast"]
+    },
+    {
+      "id": "CDC-BLAST-SCENE-SAFETY-DOCTRINE",
+      "text": "Scene safety at blast incidents requires structured assessment of multiple compounding hazards before responder entry: (1) secondary device — terrorism doctrine increasingly uses secondary IEDs to target responders (Boston Marathon 2013, Manchester Arena 2017 included potential secondary devices); EOD sweep before deep entry; (2) structural collapse — partially-damaged buildings continue to fail; structural engineer assessment for prolonged operations; (3) CBRN dispersal — possible chemical or radiological additive to conventional explosive ('dirty bomb'); CBRN screening with portable detectors; (4) fire — secondary fire from blast often spreads to surrounding structures; fire-suppression coordination; (5) infrastructure failure — gas, electrical, water disruption affecting civilian population around scene. Joint Emergency Services Interoperability Programme (JESIP) UK doctrine post-Manchester emphasizes cross-service shared situation awareness — Meshtastic mesh visible to all responders directly addresses this. EmergencyNet anomaly_detector + ZONE_CHEM/ZONE_QUAKE polygons support multi-hazard zone enforcement. Reference: CDC Blast Injury Primer + JESIP doctrine.",
+      "section": "Blast Scene Safety",
+      "page": 12,
+      "tags": ["scene_safety", "secondary_device", "JESIP", "EOD", "CBRN", "structural_collapse", "Q12_relevant", "CDC_blast"]
+    },
+    {
+      "id": "CDC-BLAST-MENTAL-HEALTH-SURGE",
+      "text": "Blast incidents produce mental-health surge in survivors, witnesses, and responders with timeline extending months-to-years post-event. Acute (0-7 days): acute stress reaction, dissociation, hyperarousal — manageable with brief psychological first aid (PFA), normalization of acute symptoms, social support reactivation. Subacute (1-4 weeks): some develop acute stress disorder requiring referral to mental-health professional. Chronic (1+ months): PTSD develops in 10-30% of high-exposure survivors and 5-15% of witnesses; comorbid depression, substance use, complicated grief common. Children and adolescents have unique vulnerability — Manchester Arena 2017 cohort follow-up demonstrated persistent symptoms in significant fraction at 2-year follow-up. Responder mental health: critical incident stress debriefing (CISD) is contested by recent meta-analyses, but ongoing peer support and mental-health leave are well-supported. Operational implication: hackathon-relevant feature (mental health track) — EmergencyNet could in future expand to flag survivors for systematic mental-health follow-up via patient record longitudinal field. Reference: CDC Blast Injury Primer + WHO Mental Health Gap Action Programme.",
+      "section": "Blast Mental Health Surge",
+      "page": 13,
+      "tags": ["blast_mental_health", "PTSD", "acute_stress", "PFA", "Manchester", "responder_health", "CDC_blast"]
+    }
+  ]
+}
