@@ -15,11 +15,8 @@
 
 ## One-paragraph description
 
-* EmergencyNet helps disaster teams keep triage and command coordination functioning when normal internet service is weak or absent.
-*  An Android Field app runs a deterministic START/JumpSTART and hidden-risk triage engine, while optional Qwen Cloud review can surface clues in multilingual notes or staged images without owning the final tag.
-*   Compact records are converted to hex and manually relayed through a Meshtastic LoRa mesh built from Heltec V4 devices.
-*    The Dockerized Base dashboard decodes packets, aggregates patient state, detects respiratory/burn/crush/RED-surge patterns, builds SITREPs, and uses **loop engineered** Qwen for structured strategy and a bounded function-calling agent.
-*    AI may propose escalation and draft messages, but human must do the final dicision.
+* EmergencyNet helps disaster teams increase triage efficiency and command coordination functioning , when normal internet service is weak or absent in the field
+* The goal is practical: help a small team miss fewer facts, carry a small amount of structured data over radio, and give the commander a clearer picture.
 
 ## What it does
 
