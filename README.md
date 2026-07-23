@@ -7,6 +7,7 @@
 > **Prototype status:** EmergencyNet is a hackathon and engineering prototype, not a certified medical device. Its clinical rules and guidance need review by qualified local medical and incident-command leaders before any real exercise or deployment. Public demos must use synthetic data.
 
 ## What EmergencyNet does—in plain English
+EmergencyNet helps disaster teams increase triage efficiency and command coordination functioning , when normal internet service is weak or absent in the field. The goal is practical: help a small team miss fewer facts, carry a small amount of structured data over radio, and give the commander a clearer picture.
 
 A responder enters a patient's condition on an Android tablet. The tablet runs a fixed 12-question checklist locally and assigns a BLACK, RED, YELLOW, or GREEN triage tag. It also checks for eight dangers that can be easy to miss when a patient still looks stable, such as a delayed airway problem after a facial burn or complications after prolonged entrapment.
 
